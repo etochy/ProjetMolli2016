@@ -1,0 +1,58 @@
+body {
+    background-color : black ;
+    background-image:url(bg2.jpg);
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#ban {
+    background-color : black ;
+    opacity : 0.7;
+    width: 75%;
+    height : 200px;
+    margin-left : auto;
+    margin-right :auto;
+}
+
+#quizz{
+    background-image:url(parchemin1.png);
+    background-size:cover;
+    background-repeat:no-repeat;
+    margin-top : 20px;
+    margin-left: 4% ;
+    width:42%;
+    height:650px;
+    float:left;
+}
+
+
+#window{
+    background-color : black;
+    opacity: 0.7;
+    margin-top : 20px;
+    margin-right: 2.5%;
+    width:50%;
+    height:650px;
+    float:right;
+}
+
+.theme {
+  margin-top: 7%;
+  text-align: center;
+}
+
+.toto[type=checkbox]{
+  margin-left : 10%;
+  margin-top : 10%;
+  font-size: 23px;
+}
+
+.validation[type=button]{
+  margin-top : 25%;
+  margin-left : 25%;
+  width: 50%;
+  height: 10%;
+  text-align: center;
+
+}
