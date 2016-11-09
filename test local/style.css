@@ -8,7 +8,7 @@ body {
 #ban {
     background-image:url(logo.png);
     background-repeat:no-repeat;
-    background-size:contain;
+    background-size: contain;
     width: 75%;
     height : 150px;
     margin-left : auto;
@@ -19,12 +19,14 @@ body {
 #quizz{
     background-image:url(parchemin1.png);
     background-size:cover;
+    background-position:fixed;
     background-repeat:no-repeat;
     margin-top : 20px;
     margin-left: 4% ;
     width:42%;
-    height:inherit;
+    height:650px;
     float:left;
+    position:relative;
 }
 
 #Ecuyer{
@@ -34,17 +36,22 @@ body {
     background-size:cover;
     background-repeat:no-repeat;
     float: right;
+    margin-bottom : 5%;
+    position:absolute;
+    bottom:0;
+    right:0;
 }
 
 
 
 #window{
-    background-color : black;
-    opacity: 0.7;
+    background-image:url(cadre1.png);
+    background-repeat:no-repeat;
+    background-size: contain;
     margin-top : 20px;
     margin-right: 2.5%;
     width:50%;
-    height: inherit;;
+    height: 600px;
     float:right;
 }
 
