@@ -1,18 +1,19 @@
 body {
     background-color : black ;
     background-image:url(bg2.jpg);
-    background-attachment: fixed;
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size: cover;
 }
 
 #ban {
-    background-color : black ;
-    opacity : 0.7;
+    background-image:url(logo.png);
+    background-repeat:no-repeat;
+    background-size:contain;
     width: 75%;
-    height : 200px;
+    height : 150px;
     margin-left : auto;
     margin-right :auto;
+    background-position: center;
 }
 
 #quizz{
@@ -22,9 +23,19 @@ body {
     margin-top : 20px;
     margin-left: 4% ;
     width:42%;
-    height:650px;
+    height:inherit;
     float:left;
 }
+
+#Ecuyer{
+    background-image:url(boss01.png);
+    width : 25%;
+    height: 25%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    float: right;
+}
+
 
 
 #window{
@@ -33,22 +44,32 @@ body {
     margin-top : 20px;
     margin-right: 2.5%;
     width:50%;
-    height:650px;
+    height: inherit;;
     float:right;
 }
 
+
+h1{
+  font:Jack in the box;
+}
+
+p{
+  text-align: center;
+
+
+}
 .theme {
   margin-top: 7%;
   text-align: center;
 }
 
-.toto[type=checkbox]{
-  margin-left : 10%;
+.toto[type=radio]{
+  margin-left : 12%;
   margin-top : 10%;
   font-size: 23px;
 }
 
-.validation[type=button]{
+.validation{
   margin-top : 25%;
   margin-left : 25%;
   width: 50%;

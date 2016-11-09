@@ -11,19 +11,31 @@
     <script type="text/javascript" src="app.js"></script>
     <div id="ban">
     </div>
-    <div id="quizz">
-      <h1 class="theme">{{"Titre du theme"}}</h1>
+    <div id="quizz" ng-controller="questionController as question">
+      <h1 class="theme">Theme : {{question.products[0].theme}}</h1>
 
-      <p class="question">Comment est née ta soeur ?</p>
-
-      <input class="toto" type="checkbox"> La réponse A </input>
-      <input class="toto" type="checkbox"> La réponse B </input>
-      <input class="toto" type="checkbox"> La réponse C </input>
+      <p class="question"> {{question.products[0].question}} </p>
 
 
-      <input class="validation" type="button" value="Validez votre réponse"></input>
+      <input class="toto" type="radio" name="reponse"> {{question.products[0].f1}}</input>
+      <input class="toto" type="radio" name="reponse"> {{question.products[0].f2}} </input>
+      <input class="toto" type="radio" name="reponse"> {{question.products[0].reponse}} </input>
+      <input class="toto" type="radio" name="reponse"> {{question.products[0].f3}} </input>
+
+
+      <button class="validation">Validez votre réponse </button>
+
+      <div  id="Ecuyer"> 
+      </div>
+
+
     </div>
+
+
     <div id="window">
+      <div id="mob">
+      </div>
+      <p>point de vie</p>
     </div>
   </body>
 </html>
