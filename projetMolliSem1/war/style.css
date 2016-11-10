@@ -1,0 +1,95 @@
+body {
+    background-color : black ;
+    background-image:url(bg2.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+#ban {
+    background-image:url(logo.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+    width: 75%;
+    height : 150px;
+    margin-left : auto;
+    margin-right :auto;
+    background-position: center;
+}
+
+#quizz{
+    background-image:url(parchemin1.png);
+    background-size:cover;;
+    background-position:fixed;
+    background-repeat:no-repeat;
+    margin-top : 20px;
+    margin-left: 4% ;
+    width:42%;
+    height:80%;
+    float:left;
+    position:absolute;
+}
+
+#Ecuyer{
+    background-image:url(boss01.png);
+    width : 20%;
+    height: 20%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    float: right;
+    margin-bottom : 5%;
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+#dialogue{
+
+    width : 20%;
+    height: 20%;
+    text-align: center;
+    position : absolute;
+    right : 0;
+    
+}
+
+
+#window{
+    background-image:url(cadre1.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+    margin-top : 20px;
+    margin-right: 2.5%;
+    width:50%;
+    height: 600px;
+    float:right;
+}
+
+
+h1{
+  font:Jack in the box;
+}
+
+p{
+  text-align: center;
+
+
+}
+.theme {
+  margin-top: 7%;
+  text-align: center;
+}
+
+.toto[type=radio]{
+  margin-left : 12%;
+  margin-top : 10%;
+  font-size: 23px;
+}
+
+.validation{
+  margin-top : 25%;
+  margin-left : 25%;
+  width: 50%;
+  height: 10%;
+  text-align: center;
+
+}
