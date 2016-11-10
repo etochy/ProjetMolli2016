@@ -1,9 +1,40 @@
 (function(){
   var app = angular.module('rpg', []);
 
-  app.controller('questionController', function(){
+  app.controller('QuestionController', function(){
     this.products = questions;
   });
+
+  app.controller('EcuyerController', function(){
+    this.products = parlotes;
+  });
+
+
+  var parlotes = [
+
+    {
+      parlote : "Tu aimes les sushis ? "
+    },
+    {
+      parlote : "La réponse D"
+    },
+    {
+      parlote : "Stéphanie de Monaco !"
+    },
+    {
+      parlote : "Tu ne trouves pas que le ciel est beau !"
+    },
+    {
+      parlote : "Comment est ce que ... "
+    },
+    {
+      parlote : "Test 1 2    1 2"
+    },
+    {
+      parlote : "Pourrr le roi !"
+    }
+  ]
+
 
   var questions = [
     {
@@ -39,10 +70,5 @@
       f3 : "Diane",
     }
     ]
-
-
-
-
-
 
   })();
