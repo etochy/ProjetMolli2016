@@ -1,6 +1,7 @@
 (function(){
   var app = angular.module('rpg', []);
 
+
   app.controller('QuestionController', function(){
     this.products = questions;
   });
@@ -8,6 +9,63 @@
   app.controller('EcuyerController', function(){
     this.products = parlotes;
   });
+
+  app.controller('PointvieController', function(){
+    this.products = pointvies;
+  });
+
+  app.controller('SorciereController', function(){
+    this.products = parlotesSorciere;
+  });
+
+
+  var pointvies = [
+    {
+      monstre :"La sorciere (Ze Wissch)",
+      pointvie : 5
+    },
+    {
+      monstre :"Le nain (Ze Douarfe)",
+      pointvie : 6
+    },
+    {
+      monstre :"Le paysan (Ze Farmeur)",
+      pointvie : 3
+    },
+    {
+      monstre :"The Big boss (Ze grosse bosse)",
+      pointvie : 10
+    }
+  ]
+
+
+
+  var parlotesSorciere = [
+
+    {
+      parlote : "Sacre Bleue !"
+    },
+    {
+      parlote : "Attends, ça charge"
+    },
+    {
+      parlote : "Tu ne serais pas mon petit-fils ?"
+    },
+    {
+      parlote : "Tu veux une pomme ?"
+    },
+    {
+      parlote : " @#!$ "
+    },
+    {
+      parlote : "Mes vieux os !"
+    },
+    {
+      parlote : "Keskidi ?"
+    }
+  ]
+
+
 
 
   var parlotes = [
@@ -22,7 +80,7 @@
       parlote : "Stéphanie de Monaco !"
     },
     {
-      parlote : "Tu ne trouves pas que le ciel est beau !"
+      parlote : "Jeanne !"
     },
     {
       parlote : "Comment est ce que ... "
@@ -34,6 +92,12 @@
       parlote : "Pourrr le roi !"
     }
   ]
+
+  function GenRand(){
+    var randP = Math.floor(Math.random() * parlotes.length)
+  }
+
+
 
 
   var questions = [
@@ -70,5 +134,8 @@
       f3 : "Diane",
     }
     ]
+
+
+
 
   })();
