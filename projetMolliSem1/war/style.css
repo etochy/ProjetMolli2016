@@ -1,6 +1,6 @@
 body {
     background-color : black ;
-    background-image:url(bg2.jpg);
+    background-image:url(/Source/ft1.jpg);
     background-repeat:no-repeat;
     background-size: cover;
 }
@@ -18,7 +18,7 @@ body {
 
 
 #ban {
-    background-image:url(logo.png);
+    background-image:url(/Source/logo.png);
     background-repeat:no-repeat;
     background-size: contain;
     width: 75%;
@@ -29,7 +29,7 @@ body {
 }
 
 #github{
-    background-image: url(github.png);
+    background-image: url(/Source/github.png);
     background-repeat:no-repeat;
     background-size: contain;
     width: 15%;
@@ -40,7 +40,7 @@ body {
 }
 
 #quizz{
-    background-image:url(parchemin1.png);
+    background-image:url(/Source/parchemin1.png);
     background-size:cover;;
     background-position:fixed;
     background-repeat:no-repeat;
@@ -53,7 +53,7 @@ body {
 }
 
 #Ecuyer{
-    background-image:url(boss01.png);
+    background-image:url(/Source/boss01.png);
     width : 20%;
     height: 20%;
     background-size:cover;
@@ -66,7 +66,7 @@ body {
 }
 
 #dialogue{
-    background-image:url(bulle.png);
+    background-image:url(/Source/bulle.png);
     background-size:contain;
     background-repeat:no-repeat;
     width : 25%;
@@ -78,7 +78,7 @@ body {
 
 
 #window{
-    background-image:url(cadre2.png);
+    background-image:url(/Source/cadre1.png);
     background-repeat:no-repeat;
     background-size: contain;
     margin-top : 20px;
@@ -89,7 +89,7 @@ body {
 }
 
 #Mob{
-  background-image:url(sorciere.jpg);
+  background-image:url(/Source/sorciere.jpg);
   background-repeat:no-repeat;
   background-size: contain;
   margin-right: 7%;
@@ -101,7 +101,7 @@ body {
 }
 
 #dialogueSorciere{
-    background-image:url(bulle.png);
+    background-image:url( /Source/bulle.png);
     background-size:contain;
     background-repeat:no-repeat;
     width : 20%;
