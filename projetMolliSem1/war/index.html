@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 
 <html ng-app="rpg">
-  <head>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8">
-  </head>
-  <body>
-    <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <div id="ban">
+<head>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+
+</head>
+
+<body>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+  <!--banner du site(logo, deco/reco et menu déroulant)-->
+  <div id="ban">
+  </div>
+  <a href="https://github.com/etochy/ProjetMolli2016">
+  <div id="github">
+  </div>
+  </a>
+  <!-- Partie gauche du site, là où il y a le quizz, l'écuyer et les potions bonus-->
+  <div id="quizz" ng-controller="QuestionController as question">
+
+    <!--là où sera affiché le Theme-->
+    <h1 class="theme">Theme : {{question.products[0].theme}}</h1>
+
+    <!--là où est affiché La question-->
+    <p class="question"> {{question.products[0].question}} </p>
+
+    <!-- les réponses, la bonne et les mauvaises-->
+    <input class="toto" type="radio" name="reponse"> {{question.products[0].f1}}</input>
+    <input class="toto" type="radio" name="reponse"> {{question.products[0].f2}} </input>
+    <input class="toto" type="radio" name="reponse"> {{question.products[0].reponse}} </input>
+    <input class="toto" type="radio" name="reponse"> {{question.products[0].f3}} </input>
+
+    <!-- Le button de validation-->
+    <button class="validation">Validez votre réponse </button>
+
+    <!--La  boite de dialogue de l'ecuyer-->
+    <div id="dialogue" ng-controller="EcuyerController as parlote"  ng-show="clicked">
+      <p class="dialogue">{{parlote.products[3].parlote}}</p>
     </div>
-    <div id="quizz" ng-controller="QuestionController as question">
-      <h1 class="theme">Theme : {{question.products[0].theme}}</h1>
 
-      <p class="question"> {{question.products[0].question}} </p>
-
-
-      <input class="toto" type="radio" name="reponse"> {{question.products[0].f1}}</input>
-      <input class="toto" type="radio" name="reponse"> {{question.products[0].f2}} </input>
-      <input class="toto" type="radio" name="reponse"> {{question.products[0].reponse}} </input>
-      <input class="toto" type="radio" name="reponse"> {{question.products[0].f3}} </input>
-
-
-      <button class="validation">Validez votre réponse </button>
-
-      <div id="dialogue" ng-controller="EcuyerController as parlote" ng-show="clicked">
-        <p>{{parlote.products[0].parlote}}</p>
+    <!--le visage de l'ecuyer et ce qu'il fait-->
+    <a href ng-click="clicked = !clicked" ng-click="GenRand()">
+      <div  id="Ecuyer">
       </div>
+    </a>
 
-      <a href ng-click="clicked = !clicked">
-        <div  id="Ecuyer">
-        </div>
-      </a>
+    <!--Fin de la partie gauche-->
+  </div>
 
-
-
-    </div>
+  <!--Début de la partie droite, là où seront les adversères, les points de vie et  -->
 
 
-    <div id="window">
-      <div id="mob">
+  <div id="window" ng-controller="PointvieController as pointvie">
+    <p class="NomMob">{{pointvie.products[0].monstre}}</p>
+    <a href ng-click="clicked1 = !clicked1" ng-click="GenRand()">
+      <div id="Mob">
       </div>
-      <p>point de vie</p>
+    </a>
+    <div id="dialogueSorciere" ng-controller="SorciereController as parloteS"  ng-show="clicked1">
+      <p class="dialogueS">{{parloteS.products[1].parlote}}</p>
     </div>
-  </body>
+
+  </div>
+
+</body>
 </html>
