@@ -20,7 +20,7 @@ public class QuestionEntity {
 	@Persistent
 	ArrayList<String> reponsesMauvaises;
 	
-	public Long getId() {
+	/*public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
@@ -37,5 +37,5 @@ public class QuestionEntity {
 	}
 	public void setScore(int score) {
 		this.score = score;
-	}
+	}*/
 }
