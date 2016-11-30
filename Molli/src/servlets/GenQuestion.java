@@ -1,4 +1,4 @@
-package projetQuizz;
+package servlets;
 
 public class GenQuestion {
 
@@ -6,7 +6,7 @@ public class GenQuestion {
 	public String sujet;
 	public String type;
 	
-    public void GenQuestion(){
+    public GenQuestion(){
 
       switch (type) {
               case "ou":
