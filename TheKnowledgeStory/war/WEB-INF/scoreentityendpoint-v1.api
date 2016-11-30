@@ -43,43 +43,6 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "scoreentityendpoint.updateScoreEntity" : {
-      "path" : "scoreentity",
-      "httpMethod" : "PUT",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.ScoreEntityEndpoint.updateScoreEntity",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "scoreentityendpoint.removeScoreEntity" : {
-      "path" : "scoreentity/{id}",
-      "httpMethod" : "DELETE",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.ScoreEntityEndpoint.removeScoreEntity",
-      "request" : {
-        "parameters" : {
-          "id" : {
-            "type" : "int64",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "empty"
-      }
-    },
     "scoreentityendpoint.listScoreEntity" : {
       "path" : "scoreentity",
       "httpMethod" : "GET",
@@ -124,6 +87,43 @@
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "scoreentityendpoint.updateScoreEntity" : {
+      "path" : "scoreentity",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.ScoreEntityEndpoint.updateScoreEntity",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "scoreentityendpoint.removeScoreEntity" : {
+      "path" : "scoreentity/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.ScoreEntityEndpoint.removeScoreEntity",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
       }
     }
   },
@@ -170,16 +170,6 @@
           "$ref" : "ScoreEntity"
         }
       },
-      "api.ScoreEntityEndpoint.updateScoreEntity" : {
-        "request" : {
-          "$ref" : "ScoreEntity"
-        },
-        "response" : {
-          "$ref" : "ScoreEntity"
-        }
-      },
-      "api.ScoreEntityEndpoint.removeScoreEntity" : {
-      },
       "api.ScoreEntityEndpoint.listScoreEntity" : {
         "response" : {
           "$ref" : "CollectionResponse_ScoreEntity"
@@ -189,6 +179,16 @@
         "response" : {
           "$ref" : "ScoreEntity"
         }
+      },
+      "api.ScoreEntityEndpoint.updateScoreEntity" : {
+        "request" : {
+          "$ref" : "ScoreEntity"
+        },
+        "response" : {
+          "$ref" : "ScoreEntity"
+        }
+      },
+      "api.ScoreEntityEndpoint.removeScoreEntity" : {
       }
     }
   }
