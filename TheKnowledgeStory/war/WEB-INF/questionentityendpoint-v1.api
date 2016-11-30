@@ -1,0 +1,207 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://theknowledgestory.appspot.com/_ah/api",
+  "name" : "questionentityendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://theknowledgestory.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "mycompany.com",
+  "ownerName" : "mycompany.com",
+  "packagePath" : "services",
+  "methods" : {
+    "questionentityendpoint.insertQuestionEntity" : {
+      "path" : "questionentity",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.QuestionEntityEndpoint.insertQuestionEntity",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "questionentityendpoint.updateQuestionEntity" : {
+      "path" : "questionentity",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.QuestionEntityEndpoint.updateQuestionEntity",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "questionentityendpoint.removeQuestionEntity" : {
+      "path" : "questionentity/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.QuestionEntityEndpoint.removeQuestionEntity",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "questionentityendpoint.listQuestionEntity" : {
+      "path" : "questionentity",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.QuestionEntityEndpoint.listQuestionEntity",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "questionentityendpoint.getQuestionEntity" : {
+      "path" : "questionentity/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.QuestionEntityEndpoint.getQuestionEntity",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "QuestionEntity" : {
+        "id" : "QuestionEntity",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "theme" : {
+            "type" : "string"
+          },
+          "question" : {
+            "type" : "string"
+          },
+          "answer" : {
+            "type" : "string"
+          },
+          "wrongAnswer1" : {
+            "type" : "string"
+          },
+          "wrongAnswer2" : {
+            "type" : "string"
+          },
+          "wrongAnswer3" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_QuestionEntity" : {
+        "id" : "CollectionResponse_QuestionEntity",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "QuestionEntity"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "api.QuestionEntityEndpoint.insertQuestionEntity" : {
+        "request" : {
+          "$ref" : "QuestionEntity"
+        },
+        "response" : {
+          "$ref" : "QuestionEntity"
+        }
+      },
+      "api.QuestionEntityEndpoint.updateQuestionEntity" : {
+        "request" : {
+          "$ref" : "QuestionEntity"
+        },
+        "response" : {
+          "$ref" : "QuestionEntity"
+        }
+      },
+      "api.QuestionEntityEndpoint.removeQuestionEntity" : {
+      },
+      "api.QuestionEntityEndpoint.listQuestionEntity" : {
+        "response" : {
+          "$ref" : "CollectionResponse_QuestionEntity"
+        }
+      },
+      "api.QuestionEntityEndpoint.getQuestionEntity" : {
+        "response" : {
+          "$ref" : "QuestionEntity"
+        }
+      }
+    }
+  }
+}
