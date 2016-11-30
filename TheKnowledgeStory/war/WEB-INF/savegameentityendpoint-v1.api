@@ -48,6 +48,47 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "savegameentityendpoint.listSaveGameEntity" : {
+      "path" : "savegameentity",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.SaveGameEntityEndpoint.listSaveGameEntity",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "savegameentityendpoint.insertSaveGameEntity" : {
+      "path" : "savegameentity",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.SaveGameEntityEndpoint.insertSaveGameEntity",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "savegameentityendpoint.updateSaveGameEntity" : {
       "path" : "savegameentity",
       "httpMethod" : "PUT",
@@ -83,47 +124,6 @@
       },
       "response" : {
         "body" : "empty"
-      }
-    },
-    "savegameentityendpoint.insertSaveGameEntity" : {
-      "path" : "savegameentity",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.SaveGameEntityEndpoint.insertSaveGameEntity",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "savegameentityendpoint.listSaveGameEntity" : {
-      "path" : "savegameentity",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.SaveGameEntityEndpoint.listSaveGameEntity",
-      "request" : {
-        "parameters" : {
-          "cursor" : {
-            "type" : "string",
-            "required" : false
-          },
-          "limit" : {
-            "type" : "int32",
-            "required" : false
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
       }
     }
   },
@@ -167,15 +167,10 @@
           "$ref" : "SaveGameEntity"
         }
       },
-      "api.SaveGameEntityEndpoint.updateSaveGameEntity" : {
-        "request" : {
-          "$ref" : "SaveGameEntity"
-        },
+      "api.SaveGameEntityEndpoint.listSaveGameEntity" : {
         "response" : {
-          "$ref" : "SaveGameEntity"
+          "$ref" : "CollectionResponse_SaveGameEntity"
         }
-      },
-      "api.SaveGameEntityEndpoint.removeSaveGameEntity" : {
       },
       "api.SaveGameEntityEndpoint.insertSaveGameEntity" : {
         "request" : {
@@ -185,10 +180,15 @@
           "$ref" : "SaveGameEntity"
         }
       },
-      "api.SaveGameEntityEndpoint.listSaveGameEntity" : {
+      "api.SaveGameEntityEndpoint.updateSaveGameEntity" : {
+        "request" : {
+          "$ref" : "SaveGameEntity"
+        },
         "response" : {
-          "$ref" : "CollectionResponse_SaveGameEntity"
+          "$ref" : "SaveGameEntity"
         }
+      },
+      "api.SaveGameEntityEndpoint.removeSaveGameEntity" : {
       }
     }
   }
