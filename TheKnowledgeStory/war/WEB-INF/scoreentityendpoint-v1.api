@@ -2,7 +2,7 @@
   "extends" : "thirdParty.api",
   "abstract" : false,
   "root" : "https://theknowledgestory.appspot.com/_ah/api",
-  "name" : "questionentityendpoint",
+  "name" : "scoreentityendpoint",
   "version" : "v1",
   "defaultVersion" : false,
   "adapter" : {
@@ -27,35 +27,14 @@
   "ownerName" : "mycompany.com",
   "packagePath" : "services",
   "methods" : {
-    "questionentityendpoint.getQuestionEntity" : {
-      "path" : "questionentity/{id}",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.QuestionEntityEndpoint.getQuestionEntity",
-      "request" : {
-        "parameters" : {
-          "id" : {
-            "type" : "int64",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "questionentityendpoint.insertQuestionEntity" : {
-      "path" : "questionentity",
+    "scoreentityendpoint.insertScoreEntity" : {
+      "path" : "scoreentity",
       "httpMethod" : "POST",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.QuestionEntityEndpoint.insertQuestionEntity",
+      "rosyMethod" : "api.ScoreEntityEndpoint.insertScoreEntity",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -64,14 +43,14 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "questionentityendpoint.updateQuestionEntity" : {
-      "path" : "questionentity",
+    "scoreentityendpoint.updateScoreEntity" : {
+      "path" : "scoreentity",
       "httpMethod" : "PUT",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.QuestionEntityEndpoint.updateQuestionEntity",
+      "rosyMethod" : "api.ScoreEntityEndpoint.updateScoreEntity",
       "request" : {
         "body" : "autoTemplate(backendRequest)",
         "bodyName" : "resource"
@@ -80,14 +59,14 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "questionentityendpoint.removeQuestionEntity" : {
-      "path" : "questionentity/{id}",
+    "scoreentityendpoint.removeScoreEntity" : {
+      "path" : "scoreentity/{id}",
       "httpMethod" : "DELETE",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.QuestionEntityEndpoint.removeQuestionEntity",
+      "rosyMethod" : "api.ScoreEntityEndpoint.removeScoreEntity",
       "request" : {
         "parameters" : {
           "id" : {
@@ -101,14 +80,14 @@
         "body" : "empty"
       }
     },
-    "questionentityendpoint.listQuestionEntity" : {
-      "path" : "questionentity",
+    "scoreentityendpoint.listScoreEntity" : {
+      "path" : "scoreentity",
       "httpMethod" : "GET",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.QuestionEntityEndpoint.listQuestionEntity",
+      "rosyMethod" : "api.ScoreEntityEndpoint.listScoreEntity",
       "request" : {
         "parameters" : {
           "cursor" : {
@@ -125,46 +104,55 @@
       "response" : {
         "body" : "autoTemplate(backendResponse)"
       }
+    },
+    "scoreentityendpoint.getScoreEntity" : {
+      "path" : "scoreentity/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.ScoreEntityEndpoint.getScoreEntity",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
     }
   },
   "descriptor" : {
     "schemas" : {
-      "QuestionEntity" : {
-        "id" : "QuestionEntity",
+      "ScoreEntity" : {
+        "id" : "ScoreEntity",
         "type" : "object",
         "properties" : {
           "id" : {
             "type" : "string",
             "format" : "int64"
           },
-          "theme" : {
+          "name" : {
             "type" : "string"
           },
-          "question" : {
-            "type" : "string"
-          },
-          "answer" : {
-            "type" : "string"
-          },
-          "wrongAnswer1" : {
-            "type" : "string"
-          },
-          "wrongAnswer2" : {
-            "type" : "string"
-          },
-          "wrongAnswer3" : {
-            "type" : "string"
+          "score" : {
+            "type" : "integer"
           }
         }
       },
-      "CollectionResponse_QuestionEntity" : {
-        "id" : "CollectionResponse_QuestionEntity",
+      "CollectionResponse_ScoreEntity" : {
+        "id" : "CollectionResponse_ScoreEntity",
         "type" : "object",
         "properties" : {
           "items" : {
             "type" : "array",
             "items" : {
-              "$ref" : "QuestionEntity"
+              "$ref" : "ScoreEntity"
             }
           },
           "nextPageToken" : {
@@ -174,32 +162,32 @@
       }
     },
     "methods" : {
-      "api.QuestionEntityEndpoint.getQuestionEntity" : {
-        "response" : {
-          "$ref" : "QuestionEntity"
-        }
-      },
-      "api.QuestionEntityEndpoint.insertQuestionEntity" : {
+      "api.ScoreEntityEndpoint.insertScoreEntity" : {
         "request" : {
-          "$ref" : "QuestionEntity"
+          "$ref" : "ScoreEntity"
         },
         "response" : {
-          "$ref" : "QuestionEntity"
+          "$ref" : "ScoreEntity"
         }
       },
-      "api.QuestionEntityEndpoint.updateQuestionEntity" : {
+      "api.ScoreEntityEndpoint.updateScoreEntity" : {
         "request" : {
-          "$ref" : "QuestionEntity"
+          "$ref" : "ScoreEntity"
         },
         "response" : {
-          "$ref" : "QuestionEntity"
+          "$ref" : "ScoreEntity"
         }
       },
-      "api.QuestionEntityEndpoint.removeQuestionEntity" : {
+      "api.ScoreEntityEndpoint.removeScoreEntity" : {
       },
-      "api.QuestionEntityEndpoint.listQuestionEntity" : {
+      "api.ScoreEntityEndpoint.listScoreEntity" : {
         "response" : {
-          "$ref" : "CollectionResponse_QuestionEntity"
+          "$ref" : "CollectionResponse_ScoreEntity"
+        }
+      },
+      "api.ScoreEntityEndpoint.getScoreEntity" : {
+        "response" : {
+          "$ref" : "ScoreEntity"
         }
       }
     }
