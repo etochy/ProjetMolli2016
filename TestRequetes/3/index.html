@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="appName" ng-controller="MainController">
+    <head>
+        <title>Angular MVP</title>
+
+        <script src="../assets/angular.min.js"></script>
+        <script src="../assets/angular-google-gapi.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <h1>Angular - MVP</h1>
+        <h2>Chapter 3: Google API</h2>
+
+        <br/>
+        <br/>
+
+        <button ng-click="randomDice()">Random Dice</button>
+        <p ng-show="random.dice">You got a {{random.dice}}!</p>
+
+        <br/>
+        <br/>
+
+        <button ng-click="randomNumber()">Random Number</button>
+        from <input type="number" ng-model="range.min" style="width:40px;"/>
+        to <input type="number" ng-model="range.max" style="width:40px;"/><br/>
+        <p ng-show="random.number">You got a {{random.number}}!</p>
+
+    </body>
+</html>
