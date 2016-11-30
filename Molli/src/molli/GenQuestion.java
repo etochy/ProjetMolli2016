@@ -1,4 +1,4 @@
-package projetQuizz;
+package molli;
 
 public class GenQuestion {
 
