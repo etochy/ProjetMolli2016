@@ -1,0 +1,35 @@
+<html ng-app="rpg">
+<head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	
+
+<div id="ban">
+</div>
+<a href="https://github.com/etochy/ProjetMolli2016">
+    <div id="github"></div>
+</a>
+<div id="hScore" ng-controller="ScoreController as score">
+	<div ng-repeat="x in scores">
+		<p>{{x.name}} and : {{x.score}}</p>
+		<p>blababalabalblablabalb</p>
+	</div>
+</div>
+
+<!-- 
+<script>
+var init = function(){
+	console.log(init called)
+	window.init();
+};
+</script>
+ -->
+ 
+ 
+</body>
+</html>

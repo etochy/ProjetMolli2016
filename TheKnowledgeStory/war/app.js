@@ -18,6 +18,9 @@
     this.products = parlotesSorciere;
   });
 
+  app.controller('ScoreController', function(){
+	this.products = scores;
+  });
 
   var pointvies = [
     {
@@ -136,6 +139,57 @@
     ]
 
 
-
+  var scores = [
+	  {
+		  name  : "toto",
+		  score : 50
+	  },
+	  {
+		  name  : "titi",
+		  score : 30
+	  },
+	  {
+		  name  : "josi",
+		  score : 21
+	  },
+	  {
+		  name  : "rasta",
+		  score : 18
+	  },
+	  {
+		  name  : "jack",
+		  score : 17
+	  },
+	  {
+		  name  : "alice",
+		  score : 10
+	  }
+  ]
+  
+  /*$window init = function(){
+   * 	var rootApi = 'http://1-dot-theknowledgeknight.appspot.com/_ah/api/';
+   * 	gapi.client.load('scoreentityendpoint','v1'function(){
+   * 		gapi.client.scoreentityendpoint.listScoreEntity().execute{
+   * 			function(resp){
+   * 				$scope.scores = resp.items;
+   * 				$scope.$apply();
+   * 				console.log(resp);
+   * 			});
+   *		}, rootApi);
+   *	}
+   *
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   */
+  
+  
+  
+  
 
   })();
