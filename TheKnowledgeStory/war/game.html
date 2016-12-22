@@ -4,22 +4,23 @@
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
     <link rel="stylesheet" href="style.css"/>
     <meta charset="UTF-8">
+    <script data-require="angular.js@1.5.x" src="https://code.angularjs.org/1.5.8/angular.js" data-semver="1.5.8"></script>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="gameApp.js"></script>
 </head>
 
 <body>	
 	<div id="ban"></div>
 	
-	<p>
-		<a href="https://github.com/etochy/ProjetMolli2016">
-		    <div id="github"></div>
-		</a>
-	</p> 
+	<a href="https://github.com/etochy/ProjetMolli2016">
+	    <div id="github"></div>
+	</a>
 	
 	<div id="leftDiv" ng-controller="QuestionController as question"> 
 	
 	    <h1 id="theme">Theme : {{question.theme}}</h1>
 	    
-	    <p id="question">{{question.name}}</p>
+	    <p id="question">{{question.title}}</p>
 		
 		<div ng-repeat="choice in question.choices">
 		    <input id="reponse" type="radio" name="reponse"> {{ choice.answer }}</input>
@@ -35,19 +36,19 @@
 	
 	</div>
 	
-	<div id="rightDiv" ng-controller="MonsterController as monster" style="color:white">
-	
-			<div id="ennemy" ng-repeat="ennemy in monster.monsters" ng-show="ennemy.id === monster.step">
+	<div id="rightDiv" ng-controller="MonsterController as monster">
+	    <div ng-repeat="ennemy in monster.monsters" ng-show="ennemy.id === monster.step">	
+			<div id="ennemy" >
  				<p>{{ennemy.name}}</p>
- 				<p>HP : {{ennemy.hp}}</p>
-			</div>
+ 				<p>HP : {{ennemy.hp - monster.correctAnswers}}</p>
+			</div>	 	
 		 	<div id="imgennemy"ng-repeat="ennemy in monster.monsters" ng-show="ennemy.id === monster.step">
 		 		<img class="monstre" ng-src="{{ennemy.image}}"/>
 		 	</div>
-	</div>	
-	
-	<script type="text/javascript" src="angular.min.js"></script>
-	<script type="text/javascript" src="gameApp.js"></script>
+		</div>
+
+
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
 
 </body>
 </html>
