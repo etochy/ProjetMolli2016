@@ -6,10 +6,7 @@
     <meta charset="UTF-8">
 </head>
 
-<body>
-	<script type="text/javascript" src="angular.min.js"></script>
-	<script type="text/javascript" src="gameApp.js"></script>
-		
+<body>	
 	<!--banner du site(logo, deco/reco et menu déroulant)-->
 	<div id="ban"></div>
 	
@@ -49,7 +46,6 @@
 	</div>
 	
 	<!--Début de la partie droite, là où seront les adversaires, les points de vie et  -->
-<<<<<<< HEAD
 	<div id="window" ng-controller="MonsterController as monster" style="color:white;">
 	    <div ng-repeat="ennemy in monster.monsters">
 	    	
@@ -62,27 +58,6 @@
 				        <p class="dialogueS">{{parloteS.products[1].parlote}}</p>
 				    </div>-->
 	    		</p>
-=======
-	<div id="window" ng-controller="MonsterController as monster">
-		<div ng-repeat="mob in monster.monsters">
-			<div id="Mob" ng-show="mob.step == mob.id">
-				{{mob.name}}
-			</div>
-		</div>
-	</div>
-	
-	<!-- <div id="window" ng-controller="MonstreController as monstres">
-	
-	    <p class="NomMob">
-	    	{{monstres.monstres[step].nom}}
-	    </p> -->
-	    
-	    
-	    
-	    <!-- <a href ng-click="clicked1 = !clicked1" ng-click="GenRand()">
-	        <div id="Mob">
-	        
->>>>>>> branch 'master' of https://github.com/etochy/ProjetMolli2016
 	        </div>
 	    </div>
 
@@ -97,9 +72,10 @@
 	    
 	     -->
 	
-	<!--</div>-->
+	</div>
 	
-	
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="gameApp.js"></script>
 
 </body>
 </html>
