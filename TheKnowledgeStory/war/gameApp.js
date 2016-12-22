@@ -1,15 +1,13 @@
 (function() {
 	var app = angular.module('game', []);
 	var step = 0;
+	var correctAnswers = 0;
 	
-	app.controller('QuestionController', ['$scope', function($scope) {
-		this.questions = questions;
-		$scope.correctAnswers = 0;
-		
-		$scope.incAnswers = function() {
-			$scope.correctAnswers++;
-		};
-	}]);
+	app.controller('QuestionController', function() {
+		this.theme;
+		this.name;
+		this.choices;
+	});
 	
 	app.controller('EcuyerController', function() {
 		this.talks = parlotes;
@@ -19,6 +17,33 @@
 		this.monsters = monsters;
 		this.step = step;
 	});
+	
+	function incAnswers() {
+		correctAnswers++;
+	}
+	
+	function incStep() {
+		if (correctAnswers = monsters[step].hp){
+			step++;
+			correctAnswers = 0;
+		}
+	}
+	
+	function genRand() {
+		var randP = Math.floor(Math.random() * parlotes.length)
+	}
+	
+	function shuffle(array) {
+		var current = array.length, tmp, rand;
+		while (0 !== currentIndex) {
+			rand = Math.floor(Math.random() * current);
+			current--;
+			tmp = array[current];
+			array[current] = array[rand];
+			array[rand] = tmp;
+		}
+		return array;
+	}
   
 	var monsters = [
 		{
@@ -47,10 +72,6 @@
 		}
 	]
 
-	function GenRand() {
-		var randP = Math.floor(Math.random() * parlotes.length)
-	}
-
 	var parlotes = [
 		{
 			parlote : "Tu aimes les sushis ? "
@@ -74,39 +95,4 @@
 			parlote : "Pourrr le roi !"
 		}
 	]
-
-	var questions = [
-		{
-			theme : "Histoire",
-			question: "Quel est la couleur du cheval blanc d'Henry IV ? ",
-			reponse: "Blanc",
-			f1 : "Jaune",
-			f2 : "Marron",
-			f3 : "Noire",
-		},
-		{
-			theme : "Hisoire",
-			question: "Où est mort la princesse Diana ?",
-			reponse: "Paris",
-			f1 : "Vietnam",
-			f2 : "Londres",
-			f3 : "New York",
-		},
-		{
-			theme : "Guerre et bataille",
-			question: "Qui a gagné la seconde guerre mondiale? ",
-			reponse: "Les Alliés",
-			f1 : "l'Axe",
-			f2 : "Rexona",
-			f3 : "le Comon Wealth",
-		},
-		{
-			theme : "Histoire",
-			question: "Quel est le nom de la reine d'angleterre ? ",
-			reponse: "Elisabeth",
-			f1 : "Victoria",
-			f2 : "Catherine",
-			f3 : "Diane",
-		}
-    ]
 })();
