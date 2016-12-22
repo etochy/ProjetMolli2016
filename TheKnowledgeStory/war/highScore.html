@@ -1,4 +1,4 @@
-<html ng-app="rpg">
+<html ng-app="highscore">
 <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
     <link rel="stylesheet" href="style.css"/>
@@ -6,7 +6,7 @@
 </head>
 <body>
 	<script type="text/javascript" src="angular.min.js"></script>
-	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="hsapp.js"></script>
 	
 
 <div id="ban">
@@ -14,36 +14,23 @@
 <a href="https://github.com/etochy/ProjetMolli2016">
     <div id="github"></div>
 </a>
-<div id="hScore" ng-controller="ScoreController as score">
-	<div ng-repeat="x in scores">
-		<p>{{x.name}} and : {{x.score}}</p>
-		<p>blababalabalblablabalb</p>
-	</div>
-</div>
+
+
 
 <script>
  	var init = function(){
  		var rootApi = 'https://1-dot-theknowledgeknight.appspot.com/_ah/api';
  		gapi.client.load('scoreentityendpoint','v1', function(){
- 			gapi.client.scoreentityendpoint.insertScoreEntity({id:01,score:100,name:"toto"}).execute (function(resp){
+ 			gapi.client.scoreentityendpoint.insertScoreEntity({id:01, score:100, name:"toto"}).execute (function(resp){
  				console.log(resp);
  			});
- 		gapi.client.scoreentity.listScoreEntity().execute(function(resp{
+ 		gapi.client.scoreentity.listScoreEntity().execute(function(resp){
  			console.log(resp);
  		});
  		), rootApi);	
- 	}
+ 	};
 </script>
 
-
-<!-- 
-<script>
-var init = function(){
-	console.log(init called)
-	window.init();
-};
-</script>
- -->
  
  
 </body>
