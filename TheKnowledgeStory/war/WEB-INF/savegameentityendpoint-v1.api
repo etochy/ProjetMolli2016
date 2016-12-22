@@ -28,31 +28,6 @@
   "ownerName" : "mycompany.com",
   "packagePath" : "services",
   "methods" : {
-    "savegameentityendpoint.listSaveGameEntity" : {
-      "path" : "savegameentity",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "api.SaveGameEntityEndpoint.listSaveGameEntity",
-      "request" : {
-        "parameters" : {
-          "cursor" : {
-            "type" : "string",
-            "required" : false
-          },
-          "limit" : {
-            "type" : "int32",
-            "required" : false
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "savegameentityendpoint.getSaveGameEntity" : {
       "path" : "savegameentity/{id}",
       "httpMethod" : "GET",
@@ -126,25 +101,35 @@
       "response" : {
         "body" : "empty"
       }
+    },
+    "savegameentityendpoint.listSaveGameEntity" : {
+      "path" : "savegameentity",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "api.SaveGameEntityEndpoint.listSaveGameEntity",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
     }
   },
   "descriptor" : {
     "schemas" : {
-      "CollectionResponse_SaveGameEntity" : {
-        "id" : "CollectionResponse_SaveGameEntity",
-        "type" : "object",
-        "properties" : {
-          "items" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "SaveGameEntity"
-            }
-          },
-          "nextPageToken" : {
-            "type" : "string"
-          }
-        }
-      },
       "SaveGameEntity" : {
         "id" : "SaveGameEntity",
         "type" : "object",
@@ -160,14 +145,24 @@
             "type" : "integer"
           }
         }
+      },
+      "CollectionResponse_SaveGameEntity" : {
+        "id" : "CollectionResponse_SaveGameEntity",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "SaveGameEntity"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
       }
     },
     "methods" : {
-      "api.SaveGameEntityEndpoint.listSaveGameEntity" : {
-        "response" : {
-          "$ref" : "CollectionResponse_SaveGameEntity"
-        }
-      },
       "api.SaveGameEntityEndpoint.getSaveGameEntity" : {
         "response" : {
           "$ref" : "SaveGameEntity"
@@ -190,6 +185,11 @@
         }
       },
       "api.SaveGameEntityEndpoint.removeSaveGameEntity" : {
+      },
+      "api.SaveGameEntityEndpoint.listSaveGameEntity" : {
+        "response" : {
+          "$ref" : "CollectionResponse_SaveGameEntity"
+        }
       }
     }
   }
