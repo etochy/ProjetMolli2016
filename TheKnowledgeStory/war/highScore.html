@@ -16,37 +16,11 @@
 
 
 	<div id="MainDiv">
-		<div ng-repeat="x in scores">
-			<p>{{x.name}} and : {{x.score}}</p>
+		<div id="decohighscore" ng-repeat="x in scores">
+			<p class="highscore">{{x.name}} and : {{x.score}}</p>
 		</div>
 	</div>
 	
-	
-	<!--  
-	<script>
-	var init = function() {
-		var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
-		gapi.client.load('scoreentityendpoint', 'v1', function() {
-			console.log("api loaded");
-			
-			gapi.client.scoreentityendpoint.listScoreEntity().execute(
-  					function(resp) {
-  						if (!resp.code) {
-  				          resp.items = resp.items || [];
-  				          var scores = [];
-  				          for (var i = 0; i < resp.items.length; i++) {	  
-  				        	  var scores[i].name = resp.items[i].name;
-  				        	  var scores[i].score = resp.items[i].score;
-  				        	//document.writeln('<div id="highscore">' + resp.items[i].name + ' : ' + resp.items[i].score + '</div>');
-  				          }
-  				        }
-  						console.log(resp);
-  					});
-		}, rootApi);
-		};
-	</script>
-	-->
-
 
 
 	<script>

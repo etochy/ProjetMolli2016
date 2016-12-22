@@ -68,8 +68,8 @@ button.b2{
     border:none;
     display:block;
     color:#555555;
-    font-weight:bold;
-    line-height:29px;
+	font-weight:bold;
+	line-height:29px;
     text-decoration:none;
 }
 
@@ -177,27 +177,80 @@ button.b2:active {
 #rightDiv{
     background-image:url(/Source/cadre1.png);
     background-repeat:no-repeat;
-    background-size: cover;
+    background-position:fixed;
+    background-size: contain;
     margin-top : 20px;
-    margin-right: 2.5%;
+	margin-right: 2.5%;
+  	position :relative;
+  	float:right;
+  	bottom : 8%;
     width:50%;
-    height: 70%;
-    float:right;
+    height: 600px;
+
 }
+
 
 #ennemy{
+	margin-left: 8%;
+    margin-top : 10%;
+    width:40%;
     color: white;
     font-size:2em;
-    margin-left: 20%;
-    margin-top: 10%;
 }
 
-#ennemy img{
-    margin-right: 15%;
-    width: 38%;
-    height: 70%;
-    position :relative;
-    display: "inline-block";
-    bottom : 8%;
+#imgennemy{
+    margin-right: 7%;
+  	width: 35%;
+  	height: 70%;
+  	float:right;
+  	bottom : 10%;
+	position :relative;
 }
+
+img.monstre{
+
+	background-repeat:no-repeat;
+	background-size: cover;
+	width : 100%;
+	heigth : auto;
+}
+
+
+
+/* ----- HighScore.Html ----- */
+
+
+#MainDiv{	
+    background-image:url(/Source/parchemin1.png);
+    background-position:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin-top : 20px;
+    margin-left: 30% ;
+    width:40%;
+    height:80%;
+    position:absolute;
+}
+
+p.highscore{
+	margin-top: 7%;
+    text-align: center;
+    color: black;
+    font-weight:bold;
+	line-height:29px;
+	font-size: 23px;
+	margin-bot :5%;
+}
+
+#decoHighScore{
+	
+	background-color:white;
+	opacity:0.7;
+
+}
+
+
+
+
+
 
