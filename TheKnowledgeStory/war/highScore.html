@@ -1,7 +1,7 @@
 <html ng-app="highscore">
 <head>
 <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-<link rel="stylesheet" href="" />
+<link rel="stylesheet" href="style.css" />
 <meta charset="UTF-8">
 </head>
 <body ng-controller="ScoreController as score">
@@ -15,14 +15,14 @@
 	</a>
 
 
-
-
-	<div ng-repeat="x in scores">
-		<p>{{x.name}}and : {{x.score}}</p>
-		<br />
+	<div id="MainDiv">
+		<div ng-repeat="x in scores">
+			<p>{{x.name}} and : {{x.score}}</p>
+		</div>
 	</div>
-
-
+	
+	
+	<!-- 
 	<script>
 	var init = function() {
 		var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
@@ -31,17 +31,21 @@
 			
 			gapi.client.scoreentityendpoint.listScoreEntity().execute(
   					function(resp) {
+  						if (!resp.code) {
+  				          resp.items = resp.items || [];
+  				          var scores = [];
+  				          for (var i = 0; i < resp.items.length; i++) {	  
+  				        	  var scores[i].name = resp.items[i].name;
+  				        	  var scores[i].score = resp.items[i].score;
+  				        	//document.writeln('<div id="highscore">' + resp.items[i].name + ' : ' + resp.items[i].score + '</div>');
+  				          }
+  				        }
   						console.log(resp);
   					});
 		}, rootApi);
-
-		
-//		gapi.client.request(GET "https://1-dot-theknowledgestory.appspot.com/_ah/api/scoreentityendpoint/v1/scoreentity") {
-//						console.log(resp);
-//					});	
-		
 		};
-</script>
+	</script>
+	 -->
 	<script src="https://apis.google.com/js/client.js?onload=init"></script>
 
 

@@ -35,17 +35,15 @@
 	
 	</div>
 	
-	<div id="rightDiv" ng-controller="MonsterController as monster" style="color:white;">
+	<div id="rightDiv" ng-controller="MonsterController as monster" style="color:white">
 	
-	    <div ng-repeat="ennemy in monster.monsters" ng-show="ennemy.id === monster.step">
-			<div id="ennemy" >
+			<div id="ennemy" ng-repeat="ennemy in monster.monsters" ng-show="ennemy.id === monster.step">
  				<p>{{ennemy.name}}</p>
  				<p>HP : {{ennemy.hp}}</p>
 			</div>
-		 	<div id="imgennemy">
-		 		<img ng-src="{{ennemy.image}}"/>
+		 	<div id="imgennemy"ng-repeat="ennemy in monster.monsters" ng-show="ennemy.id === monster.step">
+		 		<img class="monstre" ng-src="{{ennemy.image}}"/>
 		 	</div>
-		</div>
 	</div>	
 	
 	<script type="text/javascript" src="angular.min.js"></script>
