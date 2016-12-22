@@ -1,4 +1,4 @@
-(function(){
+(function() {
 	var app = angular.module('game', []);
 	var step = 0;
 	
@@ -17,6 +17,7 @@
 
 	app.controller('MonsterController', function() {
 		this.monsters = monsters;
+		this.step = step;
 	});
   
 	var monsters = [
@@ -43,30 +44,6 @@
 			id : 3,
 			hp : 10,
 			image : "/Source/bigboss.jpg"
-		}
-	]
-	
-	var parlotes = [
-		{
-			parlote : "Tu aimes les sushis ? "
-		},
-		{
-			parlote : "La réponse D"
-		},
-		{
-			parlote : "Stéphanie de Monaco !"
-		},
-		{
-			parlote : "Jeanne !"
-		},
-		{
-			parlote : "Comment est ce que ... "
-		},
-		{
-			parlote : "Test 1 2    1 2"
-		},
-		{
-			parlote : "Pourrr le roi !"
 		}
 	]
 
