@@ -1,6 +1,6 @@
 (function(){
-  var app = angular.module('rpg', []);
-
+  var app = angular.module('game', []);
+  var step = 0;
 
   app.controller('QuestionController', function(){
     this.products = questions;
@@ -38,8 +38,6 @@
       pointvie : 10
     }
   ]
-
-
 
   var parlotesSorciere = [
 
@@ -135,20 +133,5 @@
       f3 : "Diane",
     }
     ]
-
-
-
-  
-  
-  
-  
-  
-  
-  
- 
-  
-  
-  
-  
 
   })();
