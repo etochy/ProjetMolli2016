@@ -25,19 +25,22 @@
 
 <script>
 	var init = function() {
-		var rootApi = 'https://1-dot-theknowledgeknight.appspot.com/_ah/api/';
-		gapi.client.load('scoreendpointentity', 'v1', function() {
+		var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
+		gapi.client.load('scoreentityendpoint', 'v1', function() {
 			console.log("todos api loaded");
+		}, rootApi);
+		gapi.client.scoreentityendpoint.getScoreEntity(id:1).execute(function(resp) {
+			console.log(resp);
+			congole.log("truc");
+		});	
 
-			
-			gapi.client.scoreendpointentity.listScoreEntity().execute(
-					function(resp) {
+		gapi.client.request(GET "https://1-dot-theknowledgestory.appspot.com/_ah/api/scoreentityendpoint/v1/scoreentity") {
 						console.log(resp);
 					});	
-		}, rootApi);
-	}
+		
+		};
 </script>
-<script src="https://apis.google.com/js/client.js?onload=init"></script> 
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
  
  
 </body>

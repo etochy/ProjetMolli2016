@@ -6,10 +6,5 @@
 			$scope.myData = response.data.results;
 		});
 	});
-
-
-
-
-
 })();
 
