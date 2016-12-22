@@ -18,15 +18,21 @@
 		this.step = step;
 	});
 	
-	function incAnswers() {
-		correctAnswers++;
-	}
-	
-	function incStep() {
-		if (correctAnswers = monsters[step].hp){
+	// Call when the user validate an answer.
+	function validateAnswer(correct) {
+		if(correct){
+			correctAnswers++;
+		}
+		
+		if(correctAnswers == monsters[step].hp){
 			step++;
 			correctAnswers = 0;
 		}
+		
+		if(){
+			
+		}
+		
 	}
 	
 	function genRand() {
