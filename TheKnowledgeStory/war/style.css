@@ -1,11 +1,12 @@
 
 /* ----- ALL PAGES ----- */
 
-body {
-    background-color : black ;
-    background-image:url(/Source/bg4.jpg);
-    background-repeat:no-repeat;
-    background-size: cover;
+body {    
+    margin:0;
+    padding:0;
+    background: url(/Source/bg4.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-size:cover; 
 }
 
 h1{
@@ -102,14 +103,14 @@ button.b2:active {
 
 /* Left div */
 
-#leftDiv{
+#leftDiv{	
     background-image:url(/Source/parchemin1.png);
-    background-size:cover;
     background-position:fixed;
     background-repeat:no-repeat;
+    background-size:cover;
     margin-top : 20px;
     margin-left: 4% ;
-    width:42%;
+    width:40%;
     height:80%;
     float:left;
     position:absolute;
@@ -176,11 +177,11 @@ button.b2:active {
 #rightDiv{
     background-image:url(/Source/cadre1.png);
     background-repeat:no-repeat;
-    background-size: contain;
+    background-size: cover;
     margin-top : 20px;
     margin-right: 2.5%;
     width:50%;
-    height: 600px;
+    height: 70%;
     float:right;
 }
 
@@ -196,11 +197,7 @@ button.b2:active {
     width: 38%;
     height: 70%;
     position :relative;
-    float:right;
+    display: "inline-block";
     bottom : 8%;
 }
-
-
-
-
 

@@ -40,7 +40,9 @@
 	    <div ng-repeat="ennemy in monster.monsters">
 	    
 			<div id="ennemy" ng-show="ennemy.id === monster.step">
- 				<p>{{ennemy.name}} <img ng-src="{{ennemy.image}}"/></p>
+ 				<p>{{ennemy.name}}</p>
+ 				<p>HP : {{ennemy.hp}}</p>
+ 				<p><img ng-src="{{ennemy.image}}"/></p>
 			</div>
 			
 		</div>
