@@ -2,7 +2,6 @@
 	
 	var app = angular.module('game', []);
 	
-	var ROOT_API = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
 	var step = 0;
 	var correctAnswers = 0;
 	var askedAnswer = 0;
@@ -53,6 +52,7 @@
 	        		}];
 	
 	app.controller('QuestionController', function() {
+		var ROOT_API = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
 		this.theme = "test";
 		this.title = "test";
 		this.choices = [	{answer:null, correct:null},
@@ -60,15 +60,14 @@
 							{answer:null, correct:null},
 							{answer:null, correct:null}
 		                  ];
-
+		
 		gapi.client.load('questionentityendpoint', 'v1', function() {
-              gapi.client.questionentityendpoint.getQuestionEntity().execute(
-                      function(resp) {
-                          console.log(resp);
-                          //title = resp.question;
-                      });
-        }, ROOT_API);
-			
+			gapi.client.questionentityendpoint.getQuestionEntity({id:'108'}).execute(
+				function(resp) {
+					console.log(resp);
+				}
+			);
+		}, ROOT_API);
 	});
 	
 	app.controller('EcuyerController', function() {
