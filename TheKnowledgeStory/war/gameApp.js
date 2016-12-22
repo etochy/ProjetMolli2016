@@ -2,14 +2,14 @@
 	var app = angular.module('game', []);
 	var step = 0;
 	
-	app.controller('QuestionController', $scope, function($scope) {
+	app.controller('QuestionController', ['$scope', function($scope) {
 		this.questions = questions;
 		$scope.correctAnswers = 0;
 		
 		$scope.incAnswers = function() {
 			$scope.correctAnswers++;
 		};
-	});
+	}]);
 	
 	app.controller('EcuyerController', function() {
 		this.talks = parlotes;
@@ -25,25 +25,25 @@
 			name : "La sorciere (Ze Wissch)",
 			id : 0,
 			hp : 5,
-			image : "/Source/sorciere.jpg"
+			image : "Source/sorciere.jpg"
 		},
 		{
 			name :"Le nain (Ze Douarfe)",
 			id : 1,
 			hp : 6,
-			image : "/Source/nain.jpg"
+			image : "Source/nain.jpg"
 		},
 		{
 			name :"Le paysan (Ze Farmeur)",
 			id : 2,
 			hp : 3,
-			image : "/Source/paysan.jpg"
+			image : "Source/paysan.jpg"
 		},
 		{
 			name :"The Big boss (Ze grosse bosse)",
 			id : 3,
 			hp : 10,
-			image : "/Source/bigboss.jpg"
+			image : "Source/bigboss.jpg"
 		}
 	]
 

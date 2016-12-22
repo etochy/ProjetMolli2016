@@ -6,7 +6,10 @@
     <meta charset="UTF-8">
 </head>
 
-<body>	
+<body>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="gameApp.js"></script>
+		
 	<!--banner du site(logo, deco/reco et menu déroulant)-->
 	<div id="ban"></div>
 	
@@ -46,11 +49,19 @@
 	</div>
 	
 	<!--Début de la partie droite, là où seront les adversaires, les points de vie et  -->
-	<div id="window" ng-controller="MonstreController as monstres">
+	<div id="window" ng-controller="MonsterController as monster">
+		<div ng-repeat="mob in monster.monsters">
+			<div id="Mob" ng-show="mob.step == mob.id">
+				{{mob.name}}
+			</div>
+		</div>
+	</div>
+	
+	<!-- <div id="window" ng-controller="MonstreController as monstres">
 	
 	    <p class="NomMob">
 	    	{{monstres.monstres[step].nom}}
-	    </p>
+	    </p> -->
 	    
 	    
 	    
@@ -64,10 +75,9 @@
 	        <p class="dialogueS">{{parloteS.products[1].parlote}}</p>
 	    </div> -->
 	
-	</div>
+	<!--</div>-->
 	
-	<script type="text/javascript" src="angular.min.js"></script>
-	<script type="text/javascript" src="gameApp.js"></script>
+	
 
 </body>
 </html>
