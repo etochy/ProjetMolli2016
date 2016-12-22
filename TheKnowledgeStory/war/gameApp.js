@@ -1,4 +1,4 @@
-(function(){
+(function() {
 	var app = angular.module('game', []);
 	var step = 0;
 	
@@ -17,6 +17,7 @@
 
 	app.controller('MonsterController', function() {
 		this.monsters = monsters;
+		this.step = step;
 	});
   
 	var monsters = [
