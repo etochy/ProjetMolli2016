@@ -46,11 +46,16 @@
 	</div>
 	
 	<!--Début de la partie droite, là où seront les adversaires, les points de vie et  -->
-	<div id="window" ng-controller="MonstreController as monstres">
-	
-	    <p class="NomMob">
-	    	{{monstres.monstres[step].nom}}
-	    </p>
+	<div id="window" ng-controller="MonsterController as monster">
+
+	    <div ng-repeat="ennemy in monster.monsters">
+	        <div id="Mob" ng-show="monters.step == ennemy.id">
+				<p class="NomMob">
+	    			{{ennemy.nom}}
+	    		</p>
+	        </div>
+	    </div>
+
 	    
 	    
 	    
