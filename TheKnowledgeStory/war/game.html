@@ -7,17 +7,16 @@
 </head>
 
 <body>	
-	<!--banner du site(logo, deco/reco et menu déroulant)-->
 	<div id="ban"></div>
 	
-	<a href="https://github.com/etochy/ProjetMolli2016">
-	    <div id="github"></div>
-	</a> 
+	<p>
+		<a href="https://github.com/etochy/ProjetMolli2016">
+		    <div id="github"></div>
+		</a>
+	</p> 
 	
-	<!-- Partie gauche du site, là où il y a le quizz, l'écuyer et les potions bonus-->
 	<div id="quizz" ng-controller="QuestionController as question"> 
 	
-		<!--là où sera affiché le Theme-->
 	    <h1 class="theme">Theme : {{question.products[0].theme}}</h1>
 	
 	    <!--là où est affiché La question-->
@@ -49,29 +48,14 @@
 	<div id="window" ng-controller="MonsterController as monster" style="color:white;">
 	    <div ng-repeat="ennemy in monster.monsters">
 	    	
-	        <div id="ennemy" ng-show="monster.step === ennemy.id">
+	        <div ng-show="monster.step === ennemy.id">
 				<p class="NomMob">
 	    			{{ennemy.name}}
-	    			<img ng-src="{{ennemy.image.full}}"/>
-	    			<!--<div id="dialogueSorciere" ng-controller="SorciereController as parloteS" ng-show="clicked1">
-	    			
-				        <p class="dialogueS">{{parloteS.products[1].parlote}}</p>
-				    </div>-->
+	    			<img id="ennemy" ng-src="{{ennemy.image}}"/>
+				    </div>
 	    		</p>
 	        </div>
-	    </div>
-
-	    
-	    
-	    
-	    <!--  
-	    
-	    <a href ng-click="clicked1 = !clicked1" ng-click="GenRand()">
-				        <div id="Mob"></div>
-				    </a>
-	    
-	     -->
-	
+	    </div>	
 	</div>
 	
 	<script type="text/javascript" src="angular.min.js"></script>
