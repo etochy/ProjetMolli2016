@@ -2,7 +2,7 @@
 	var app = angular.module('game', []);
 	var step = 0;
 	
-	app.controller('QuestionController', $scope, function($scope){
+	app.controller('QuestionController', $scope, function($scope) {
 		this.questions = questions;
 		$scope.correctAnswers = 0;
 		
@@ -11,11 +11,11 @@
 		};
 	});
 	
-	app.controller('EcuyerController', function(){
+	app.controller('EcuyerController', function() {
 		this.talks = parlotes;
 	});
 
-	app.controller('MonstreController', function(){
+	app.controller('MonsterController', function() {
 		this.monsters = monsters;
 	});
   
@@ -70,7 +70,7 @@
 		}
 	]
 
-	function GenRand(){
+	function GenRand() {
 		var randP = Math.floor(Math.random() * parlotes.length)
 	}
 
@@ -97,10 +97,6 @@
 			parlote : "Pourrr le roi !"
 		}
 	]
-
-	function GenRand(){
-		var randP = Math.floor(Math.random() * parlotes.length)
-	}
 
 	var questions = [
 		{
@@ -136,5 +132,4 @@
 			f3 : "Diane",
 		}
     ]
-
 })();
