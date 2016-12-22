@@ -15,48 +15,37 @@
 		</a>
 	</p> 
 	
-	<div id="quizz" ng-controller="QuestionController as question"> 
+	<div id="leftDiv" ng-controller="QuestionController as question"> 
 	
-	    <h1 class="theme">Theme : {{question.products[0].theme}}</h1>
+	    <h1 id="theme">Theme : {{question.theme}}</h1>
+	    
+	    <p id="question">{{question.name}}</p>
+		
+		<div ng-repeat="choice in question.choices">
+		    <input id="reponse" type="radio" name="reponse"> {{ choice.answer }}</input>
+		</div>
 	
-	    <!--là où est affiché La question-->
-	    <p class="question"> {{question.products[0].question}} </p>
+	    <button id="validerReponse">Validez votre réponse</button>
 	
-	    <!-- les réponses, la bonne et les mauvaises-->
-	    <input class="toto" type="radio" name="reponse"> {{question.products[0].f1}}</input>
-	    <input class="toto" type="radio" name="reponse"> {{question.products[0].f2}} </input>
-	    <input class="toto" type="radio" name="reponse"> {{question.products[0].reponse}} </input>
-	    <input class="toto" type="radio" name="reponse"> {{question.products[0].f3}} </input>
-	
-	    <!-- Le button de validation-->
-	    <button class="validation">Validez votre réponse</button>
-	
-	    <!--La  boite de dialogue de l'ecuyer-->
-	    <div id="dialogue" ng-controller="EcuyerController as parlote" ng-show="clicked">
-	        <p class="dialogue">{{parlote.products[3].parlote}}</p>
+	    <div id="dialogueEcuyerBox" ng-controller="EcuyerController" ng-show="clicked">
+	        <p id="dialogueEcuyerText">{{ }}</p>
 	    </div>
-	
-	    <!--le visage de l'ecuyer et ce qu'il fait-->
-	    <a href ng-click="clicked = !clicked" ng-click="GenRand()">
-	        <div id="Ecuyer">
-	        </div>
-	    </a>
+	    
+	    <a href ng-click="clicked = !clicked" ng-click="GenRand()"><div id="Ecuyer"></div></a> 
 	
 	</div>
 	
-	<!--Début de la partie droite, là où seront les adversaires, les points de vie et  -->
-	<div id="window" ng-controller="MonsterController as monster" style="color:white;">
+	<div id="rightDiv" ng-controller="MonsterController as monster" style="color:white;">
+	
 	    <div ng-repeat="ennemy in monster.monsters">
-	    	
-	        <div ng-show="monster.step === ennemy.id">
-				<p class="NomMob">
-	    			{{ennemy.name}}
-	    			<img id="ennemy" ng-src="{{ennemy.image}}"/>
-				    </div>
-	    		</p>
-	        </div>
-	    </div>	
-	</div>
+	    
+			<div id="ennemy" ng-show="ennemy.id === monster.step">
+ 				<p>{{ennemy.name}} <img ng-src="{{ennemy.image}}"/></p>
+			</div>
+			
+		</div>
+		
+	</div>	
 	
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="gameApp.js"></script>

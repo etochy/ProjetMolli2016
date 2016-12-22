@@ -100,7 +100,9 @@ button.b2:active {
 
 /* ----- GAME.HTML ----- */
 
-#quizz{
+/* Left div */
+
+#leftDiv{
     background-image:url(/Source/parchemin1.png);
     background-size:cover;
     background-position:fixed;
@@ -113,8 +115,33 @@ button.b2:active {
     position:absolute;
 }
 
+#theme {
+    margin-top: 7%;
+    text-align: center;
+}
+
+#question{
+    text-shadow: 10;
+    text-align: center;
+}
+
+#reponse[type=radio]{
+    margin-left : 12%;
+    margin-top : 10%;
+   	font-size: 23px;
+    float: left;
+}
+
+#validerReponse{
+    margin-top : 10%;
+    margin-left : 25%;
+    width: 50%;
+    height: 10%;
+    text-align: center;
+}
+
 #Ecuyer{
-    background-image:url(/Source/boss01.png);
+    background-image:url(/Source/ecuyer.png);
     width : 20%;
     height: 20%;
     background-size:cover;
@@ -126,7 +153,7 @@ button.b2:active {
     right:0;
 }
 
-#dialogue{
+#dialogueEcuyerBox{
     background-image:url(/Source/bulle.png);
     background-size:contain;
     background-repeat:no-repeat;
@@ -137,8 +164,16 @@ button.b2:active {
     bottom: 18%;
 }
 
+#dialogueEcuyerText{
+    margin-top: 25%;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
 
-#window{
+/* right div */
+
+#rightDiv{
     background-image:url(/Source/cadre1.png);
     background-repeat:no-repeat;
     background-size: contain;
@@ -150,7 +185,14 @@ button.b2:active {
 }
 
 #ennemy{
-    margin-right: 7%;
+    color: white;
+    font-size:2em;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+#ennemy img{
+    margin-right: 15%;
     width: 38%;
     height: 70%;
     position :relative;
@@ -158,57 +200,7 @@ button.b2:active {
     bottom : 8%;
 }
 
-#dialogue{
-    background-image:url( /Source/bulle.png);
-    background-size:contain;
-    background-repeat:no-repeat;
-    width : 20%;
-    height :20%;
-    position : absolute;
-    right : 10%;
-    top : 20%;
-}
-
-p.dialogue{
-    margin-top: 25%;
-    margin-left: 15%;
-    margin-right: 15%;
-    text-align: center;
-}
-
-p.dialogueS{
-    margin-top: 18%;
-    margin-right: 40%;
-    text-align: center;
-}
-
-p.question{
-    text-shadow: 10;
-    text-align: center;
-}
 
 
-p.NomMob{
-    color: white;
-    margin-left: 20%;
-    margin-top: 10%;
-}
 
-.theme {
-    margin-top: 7%;
-    text-align: center;
-}
 
-.toto[type=radio]{
-    margin-left : 12%;
-    margin-top : 10%;
-    font-size: 23px;
-}
-
-.validation{
-    margin-top : 10%;
-    margin-left : 25%;
-    width: 50%;
-    height: 10%;
-    text-align: center;
-}
