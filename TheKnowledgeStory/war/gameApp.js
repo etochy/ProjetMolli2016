@@ -29,9 +29,9 @@
 			correctAnswers = 0;
 		}
 		
-		if(){
+		//if(){
 			
-		}
+		//}
 		
 	}
 	
