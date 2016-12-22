@@ -2,11 +2,26 @@
 	var app = angular.module('game', []);
 	var step = 0;
 	var correctAnswers = 0;
+	var nbAnswer = 0;
 	
 	app.controller('QuestionController', function() {
 		this.theme;
 		this.name;
 		this.choices;
+		
+		this.enregistrerScore= function(name,score){
+	        var rootApi = 'https://1-dot-progwebalexis.appspot.com/_ah/api/';
+	        var _name = name;
+	        var _score = _score;
+	        gapi.client.load('scoreentityendpoint', 'v1', function() {
+	              console.log("todos api loaded");
+
+	              gapi.client.scoreentityendpoint.listScoreEntity().execute(
+	                      function(resp) {
+	                          console.log(resp);
+	                      });
+	          }, rootApi);
+	      }
 	});
 	
 	app.controller('EcuyerController', function() {
@@ -24,14 +39,20 @@
 			correctAnswers++;
 		}
 		
-		if(correctAnswers == monsters[step].hp){
-			step++;
+		nbAnswer++;
+		
+		if(nbAnswer == 10){
+			if(correctAnswers >= monsters[step].hp){
+				step++;
+			}
+			else{
+				alert('Game over, vous devez réaffronter ce boss !');
+			}
+		
+			nbAnswer = 0;
 			correctAnswers = 0;
 		}
-		
-		if(){
-			
-		}
+
 		
 	}
 	
@@ -50,10 +71,6 @@
 		}
 		return array;
 	}
-	
-	// Question : on a pas un problème du coup si les questions sont dans une table à part, et que les choix sont dans le questionController ?
-	// Comment on fait pour que la table questions contienne pour chaque case : un thème, un nom, un tableau de choix ?
-	var questions = new Array(40);
   
 	var monsters = [
 		{
