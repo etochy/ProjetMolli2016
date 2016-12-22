@@ -15,23 +15,21 @@
 		this.talks = parlotes;
 	});
 
-<<<<<<< HEAD
-  app.controller('QuestionController', function(){
-    this.products = questions;
-  });
-
-  app.controller('EcuyerController', function(){
-    this.products = parlotes;
-  });
-
-  app.controller('MonstreController', function(){
-    this.monstres = monsters;
-  });
-=======
-	app.controller('MonstreController', function(){
+	  app.controller('QuestionController', function(){
+	    this.products = questions;
+	  });
+	
+	  app.controller('EcuyerController', function(){
+	    this.products = parlotes;
+	  });
+	
+	  app.controller('MonstreController', function(){
+	    this.monstres = monsters;
+	  });
+	
+		app.controller('MonstreController', function(){
 		this.monsters = monsters;
 	});
->>>>>>> branch 'master' of https://github.com/etochy/ProjetMolli2016
   
 	var monsters = [
 		{
