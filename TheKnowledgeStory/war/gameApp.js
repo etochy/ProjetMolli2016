@@ -1,27 +1,74 @@
 (function() {
+	
 	var app = angular.module('game', []);
+	
+	var ROOT_API = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
 	var step = 0;
 	var correctAnswers = 0;
-	var nbAnswer = 0;
+	var askedAnswer = 0;
+	var monsters = [{
+	        			name : "La sorciere (Ze Wissch)",
+	        			id : 0,
+	        			hp : 5,
+	        			image : "Source/sorciere.jpg"
+	        		},
+	        		{
+	        			name :"Le nain (Ze Douarfe)",
+	        			id : 1,
+	        			hp : 6,
+	        			image : "Source/nain.jpg"
+	        		},
+	        		{
+	        			name :"Le paysan (Ze Farmeur)",
+	        			id : 2,
+	        			hp : 3,
+	        			image : "Source/paysan.jpg"
+	        		},
+	        		{
+	        			name :"The Big boss (Ze grosse bosse)",
+	        			id : 3,
+	        			hp : 10,
+	        			image : "Source/bigboss.jpg"
+	        		}];
+	var parlotes = [{
+	        			parlote : "Tu aimes les sushis ? "
+	        		},
+	        		{
+	        			parlote : "La réponse D"
+	        		},
+	        		{
+	        			parlote : "Stéphanie de Monaco !"
+	        		},
+	        		{
+	        			parlote : "Jeanne !"
+	        		},
+	        		{
+	        			parlote : "Comment est ce que ... "
+	        		},
+	        		{
+	        			parlote : "Test 1 2    1 2"
+	        		},
+	        		{
+	        			parlote : "Pourrr le roi !"
+	        		}];
 	
 	app.controller('QuestionController', function() {
-		this.theme;
-		this.name;
-		this.choices;
-		
-		this.enregistrerScore= function(name,score){
-	        var rootApi = 'https://1-dot-progwebalexis.appspot.com/_ah/api/';
-	        var _name = name;
-	        var _score = _score;
-	        gapi.client.load('scoreentityendpoint', 'v1', function() {
-	              console.log("todos api loaded");
+		this.theme = "test";
+		this.title = "test";
+		this.choices = [	{answer:null, correct:null},
+							{answer:null, correct:null},
+							{answer:null, correct:null},
+							{answer:null, correct:null}
+		                  ];
 
-	              gapi.client.scoreentityendpoint.listScoreEntity().execute(
-	                      function(resp) {
-	                          console.log(resp);
-	                      });
-	          }, rootApi);
-	      }
+		gapi.client.load('questionentityendpoint', 'v1', function() {
+              gapi.client.questionentityendpoint.getQuestionEntity().execute(
+                      function(resp) {
+                          console.log(resp);
+                          //title = resp.question;
+                      });
+        }, ROOT_API);
+			
 	});
 	
 	app.controller('EcuyerController', function() {
@@ -31,6 +78,7 @@
 	app.controller('MonsterController', function() {
 		this.monsters = monsters;
 		this.step = step;
+		this.correctAnswers = correctAnswers;
 	});
 	
 	// Call when the user validate an answer.
@@ -38,28 +86,25 @@
 		if(correct){
 			correctAnswers++;
 		}
-		
-		nbAnswer++;
-		
-		if(nbAnswer == 10){
+		askedAnswer++;
+		if(askedAnswer == 10){
 			if(correctAnswers >= monsters[step].hp){
 				step++;
 			}
 			else{
 				alert('Game over, vous devez réaffronter ce boss !');
 			}
-		
-			nbAnswer = 0;
+			askedAnswer = 0;
 			correctAnswers = 0;
 		}
-
-		
 	}
 	
+	// Return a random number
 	function genRand() {
-		var randP = Math.floor(Math.random() * parlotes.length)
+		return Math.floor(Math.random() * parlotes.length);
 	}
 	
+	// Randomize an array
 	function shuffle(array) {
 		var current = array.length, tmp, rand;
 		while (0 !== currentIndex) {
@@ -71,55 +116,5 @@
 		}
 		return array;
 	}
-  
-	var monsters = [
-		{
-			name : "La sorciere (Ze Wissch)",
-			id : 0,
-			hp : 5,
-			image : "Source/sorciere.jpg"
-		},
-		{
-			name :"Le nain (Ze Douarfe)",
-			id : 1,
-			hp : 6,
-			image : "Source/nain.jpg"
-		},
-		{
-			name :"Le paysan (Ze Farmeur)",
-			id : 2,
-			hp : 3,
-			image : "Source/paysan.jpg"
-		},
-		{
-			name :"The Big boss (Ze grosse bosse)",
-			id : 3,
-			hp : 10,
-			image : "Source/bigboss.jpg"
-		}
-	]
-
-	var parlotes = [
-		{
-			parlote : "Tu aimes les sushis ? "
-		},
-		{
-			parlote : "La réponse D"
-		},
-		{
-			parlote : "Stéphanie de Monaco !"
-		},
-		{
-			parlote : "Jeanne !"
-		},
-		{
-			parlote : "Comment est ce que ... "
-		},
-		{
-			parlote : "Test 1 2    1 2"
-		},
-		{
-			parlote : "Pourrr le roi !"
-		}
-	]
+	
 })();
