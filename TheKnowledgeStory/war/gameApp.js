@@ -48,10 +48,11 @@
 			else{
 				alert('Game over, vous devez réaffronter ce boss !');
 			}
-			
+		
 			nbAnswer = 0;
 			correctAnswers = 0;
 		}
+
 		
 	}
 	
