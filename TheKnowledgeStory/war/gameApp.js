@@ -1,15 +1,11 @@
 (function() {
 	var app = angular.module('game', []);
 	var step = 0;
+	var correctAnswers = 0;
 	
-	app.controller('QuestionController', ['$scope', function($scope) {
+	app.controller('QuestionController', function() {
 		this.questions = questions;
-		$scope.correctAnswers = 0;
-		
-		$scope.incAnswers = function() {
-			$scope.correctAnswers++;
-		};
-	}]);
+	});
 	
 	app.controller('EcuyerController', function() {
 		this.talks = parlotes;
@@ -19,6 +15,21 @@
 		this.monsters = monsters;
 		this.step = step;
 	});
+	
+	function incAnswers() {
+		correctAnswers++;
+	}
+	
+	function incStep() {
+		if (correctAnswers = monsters[step].hp){
+			step++;
+			correctAnswers = 0;
+		}
+	}
+	
+	function genRand() {
+		var randP = Math.floor(Math.random() * parlotes.length)
+	}
   
 	var monsters = [
 		{
