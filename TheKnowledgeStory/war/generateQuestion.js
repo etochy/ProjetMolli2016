@@ -14,8 +14,7 @@ app.controller('generation',function($scope,$http){
 		var _wrongAnswer3 = wrongAnswer3;
 
 		gapi.client.load('questionentityendpoint', 'v1', function() {
-			console.log("todos api loaded");
-
+			console.log("api loaded");
 			gapi.client.questionentityendpoint.insertQuestionEntity({theme:_theme,question:_question,answer:_question,wrongAnswer1:_wrongAnswer1,wrongAnswer2:_wrongAnswer2,wrongAnswer3:_wrongAnswer3}).execute(
 					function(resp) {
 						console.log(resp);
@@ -25,9 +24,7 @@ app.controller('generation',function($scope,$http){
 
 
 	this.generer = function(){
-		console.log("lancement");
 		$http.get('batailles.json').success(function(response){
-			console.log("Ntm");
 			$scope.myData = response.results;
 			angular.forEach($scope.myData, function(key, value){
 				var test = {
@@ -126,12 +123,9 @@ app.controller('generation',function($scope,$http){
 					}
 				});
 			});
-			console.log("Ntm4");
 		})
 		.error(function() {
-			console.log("error");
+			console.log("error, batailles.json not found");
 		});
-
-		console.log("fin");
 	}
 });
