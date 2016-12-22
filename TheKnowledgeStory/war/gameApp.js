@@ -50,6 +50,10 @@
 		}
 		return array;
 	}
+	
+	// Question : on a pas un problème du coup si les questions sont dans une table à part, et que les choix sont dans le questionController ?
+	// Comment on fait pour que la table questions contienne pour chaque case : un thème, un nom, un tableau de choix ?
+	var questions = new Array(40);
   
 	var monsters = [
 		{
