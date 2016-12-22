@@ -21,6 +21,21 @@
 	</div>
 </div>
 
+<script>
+ 	var init = function(){
+ 		var rootApi = 'https://1-dot-theknowledgeknight.appspot.com/_ah/api';
+ 		gapi.client.load('scoreentityendpoint','v1', function(){
+ 			gapi.client.scoreentityendpoint.insertScoreEntity({id:01,score:100,name:"toto"}).execute (function(resp){
+ 				console.log(resp);
+ 			});
+ 		gapi.client.scoreentity.listScoreEntity().execute(function(resp{
+ 			console.log(resp);
+ 		});
+ 		), rootApi);	
+ 	}
+</script>
+
+
 <!-- 
 <script>
 var init = function(){
