@@ -1,47 +1,49 @@
 <html ng-app="highscore">
 <head>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
-    <link rel="stylesheet" href=""/>
-    <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+<link rel="stylesheet" href="" />
+<meta charset="UTF-8">
 </head>
 <body ng-controller="ScoreController as score">
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="hsapp.js"></script>
-	
 
-<div id="ban">
-</div>
-<a href="https://github.com/etochy/ProjetMolli2016">
-    <div id="github"></div>
-</a>
 
+	<div id="ban"></div>
+	<a href="https://github.com/etochy/ProjetMolli2016">
+		<div id="github"></div>
+	</a>
 
 
 
-<div ng-repeat="x in scores">
-	<p>{{x.name}}and : {{x.score}} </p> <br />
-</div>
+
+	<div ng-repeat="x in scores">
+		<p>{{x.name}}and : {{x.score}}</p>
+		<br />
+	</div>
 
 
-<script>
+	<script>
 	var init = function() {
 		var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
 		gapi.client.load('scoreentityendpoint', 'v1', function() {
-			console.log("todos api loaded");
+			console.log("api loaded");
+			
+			gapi.client.scoreentityendpoint.listScoreEntity().execute(
+  					function(resp) {
+  						console.log(resp);
+  					});
 		}, rootApi);
-		gapi.client.scoreentityendpoint.getScoreEntity(id:1).execute(function(resp) {
-			console.log(resp);
-			congole.log("truc");
-		});	
 
-		gapi.client.request(GET "https://1-dot-theknowledgestory.appspot.com/_ah/api/scoreentityendpoint/v1/scoreentity") {
-						console.log(resp);
-					});	
+		
+//		gapi.client.request(GET "https://1-dot-theknowledgestory.appspot.com/_ah/api/scoreentityendpoint/v1/scoreentity") {
+//						console.log(resp);
+//					});	
 		
 		};
 </script>
-<script src="https://apis.google.com/js/client.js?onload=init"></script>
- 
- 
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+
 </body>
 </html>
