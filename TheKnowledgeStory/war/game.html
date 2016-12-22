@@ -46,12 +46,17 @@
 	</div>
 	
 	<!--Début de la partie droite, là où seront les adversaires, les points de vie et  -->
-	<div id="window" ng-controller="MonsterController as monster">
-
+	<div id="window" ng-controller="MonsterController as monster" style="color:white;">
 	    <div ng-repeat="ennemy in monster.monsters">
-	        <div id="Mob" ng-show="monters.step == ennemy.id">
+	    	
+	        <div id="ennemy" ng-show="monster.step === ennemy.id">
 				<p class="NomMob">
-	    			{{ennemy.nom}}
+	    			{{ennemy.name}}
+	    			<img ng-src="{{ennemy.image.full}}"/>
+	    			<!--<div id="dialogueSorciere" ng-controller="SorciereController as parloteS" ng-show="clicked1">
+	    			
+				        <p class="dialogueS">{{parloteS.products[1].parlote}}</p>
+				    </div>-->
 	    		</p>
 	        </div>
 	    </div>
@@ -59,15 +64,13 @@
 	    
 	    
 	    
-	    <!-- <a href ng-click="clicked1 = !clicked1" ng-click="GenRand()">
-	        <div id="Mob">
-	        
-	        </div>
-	    </a> 
+	    <!--  
 	    
-	    <div id="dialogueSorciere" ng-controller="SorciereController as parloteS" ng-show="clicked1">
-	        <p class="dialogueS">{{parloteS.products[1].parlote}}</p>
-	    </div> -->
+	    <a href ng-click="clicked1 = !clicked1" ng-click="GenRand()">
+				        <div id="Mob"></div>
+				    </a>
+	    
+	     -->
 	
 	</div>
 	
