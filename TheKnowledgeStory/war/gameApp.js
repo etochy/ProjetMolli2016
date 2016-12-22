@@ -11,7 +11,7 @@
   });
 
   app.controller('MonstreController', function(){
-    this.monstres = monstres;
+    this.monstres = monsters;
   });
   
   var monsters = [

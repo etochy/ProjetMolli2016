@@ -15,8 +15,8 @@
 	</a> 
 	
 	<!-- Partie gauche du site, là où il y a le quizz, l'écuyer et les potions bonus-->
-	
 	<div id="quizz" ng-controller="QuestionController as question"> 
+	
 		<!--là où sera affiché le Theme-->
 	    <h1 class="theme">Theme : {{question.products[0].theme}}</h1>
 	
@@ -45,21 +45,22 @@
 	
 	</div>
 	
-	<!--Fin de la partie gauche-->
-	
 	<!--Début de la partie droite, là où seront les adversaires, les points de vie et  -->
+	<div id="window" ng-controller="MonstreController as monstres">
 	
-	
-	<div id="window" ng-controller="PointvieController as pointvie">
-	    <p class="NomMob">{{pointvie.products[0].monstre}}</p>
-	    <a href ng-click="clicked1 = !clicked1" ng-click="GenRand()">
+	    <p class="NomMob">
+	    	{{monstres.monstres[step].nom}}
+	    </p>
+	    
+	    
+	    
+	    <!-- <a href ng-click="clicked1 = !clicked1" ng-click="GenRand()">
 	        <div id="Mob">
+	        
 	        </div>
-	    </a>
+	    </a> 
 	    
-	    
-	
-	    <!--<div id="dialogueSorciere" ng-controller="SorciereController as parloteS" ng-show="clicked1">
+	    <div id="dialogueSorciere" ng-controller="SorciereController as parloteS" ng-show="clicked1">
 	        <p class="dialogueS">{{parloteS.products[1].parlote}}</p>
 	    </div> -->
 	
