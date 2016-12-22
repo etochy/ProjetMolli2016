@@ -10,33 +10,35 @@
     this.products = parlotes;
   });
 
-  app.controller('PointvieController', function(){
-    this.products = pointvies;
+  app.controller('MonstreController', function(){
+    this.monstres = monstres;
   });
-
-  app.controller('SorciereController', function(){
-    this.products = parlotesSorciere;
-  });
-
- 
-
-  var pointvies = [
-    {
-      monstre :"La sorciere (Ze Wissch)",
-      pointvie : 5
-    },
-    {
-      monstre :"Le nain (Ze Douarfe)",
-      pointvie : 6
-    },
-    {
-      monstre :"Le paysan (Ze Farmeur)",
-      pointvie : 3
-    },
-    {
-      monstre :"The Big boss (Ze grosse bosse)",
-      pointvie : 10
-    }
+  
+  var monsters = [
+	{
+		nom : "La sorciere (Ze Wissch)",
+		id : 1,
+		pv : 5,
+		image : "/Source/sorciere.jpg"
+	},
+	{
+		nom :"Le nain (Ze Douarfe)",
+		id : 2,
+		pv : 6,
+		image : "/Source/nain.jpg"
+	},
+	{
+		nom :"Le paysan (Ze Farmeur)",
+		id : 3,
+		pv : 3,
+		image : "/Source/paysan.jpg"
+	},
+	{
+		nom :"The Big boss (Ze grosse bosse)",
+		id : 4,
+		pv : 10,
+		image : "/Source/bigboss.jpg"
+	}
   ]
 
   var parlotesSorciere = [

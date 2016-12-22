@@ -10,7 +10,7 @@
 </head>
 <body>
 <script type="text/javascript" src="angular.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="gameApp.js"></script>
 <script> function onSignIn(googleUser) {
     /* Useful data for your client-side scripts:*/
     var profile = googleUser.getBasicProfile();
@@ -24,8 +24,17 @@
     /* The ID token you need to pass to your backend:*/
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-}
-;
+};
+</script>
+<script>
+ 	var init = function(){
+ 		var rootApi = 'https://1-dot-theknowledgeknight.appspot.com/_ah/api';
+ 		gapi.client.load('scoreentityendpoint','v1', function(){
+ 			gapi.client.scoreentityendpoint.insertScoreEntity({id:profile.getId(),score:100,name:profile.getName()}).execute (function(resp){
+ 				console.log(resp);
+ 			});
+ 		), rootApi);	
+ 	}
 </script>
 <script>
     function signOut() {
