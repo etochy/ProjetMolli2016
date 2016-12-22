@@ -1,9 +1,41 @@
-body {
-    background-color : black ;
-    background-image:url(/Source/bg4.jpg);
-    background-repeat:no-repeat;
-    background-size: cover;
+
+/* ----- ALL PAGES ----- */
+
+body {    
+    margin:0;
+    padding:0;
+    background: url(/Source/bg4.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    background-size:cover; 
 }
+
+h1{
+    font:Jack in the box;
+}
+
+#ban {
+    background-image:url(/Source/logo.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+    width: 75%;
+    height : 150px;
+    margin-left : auto;
+    margin-right :auto;
+    background-position: center;
+}
+
+#github{
+    background-image: url(/Source/github.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+    width: 15%;
+    height : 15%;
+    position:absolute;
+    right : 0;
+    top : 0;
+}
+
+/* ----- INDEX.HTML ----- */
 
 button.b1 {
     margin-left: 40%;
@@ -67,53 +99,50 @@ button.b2:active {
 }
 
 
-#tableau{
+/* ----- GAME.HTML ----- */
 
-    background-color : black;
-    opacity: 0.7;
-    width : 70%;
-    height : 600px;
-    margin-left : 15%;
-}
+/* Left div */
 
-
-#ban {
-    background-image:url(/Source/logo.png);
-    background-repeat:no-repeat;
-    background-size: contain;
-    width: 75%;
-    height : 150px;
-    margin-left : auto;
-    margin-right :auto;
-    background-position: center;
-}
-
-#github{
-    background-image: url(/Source/github.png);
-    background-repeat:no-repeat;
-    background-size: contain;
-    width: 15%;
-    height : 15%;
-    position:absolute;
-    right : 0;
-    top : 0;
-}
-
-#quizz{
+#leftDiv{	
     background-image:url(/Source/parchemin1.png);
-    background-size:cover;;
     background-position:fixed;
     background-repeat:no-repeat;
+    background-size:cover;
     margin-top : 20px;
     margin-left: 4% ;
-    width:42%;
+    width:40%;
     height:80%;
     float:left;
     position:absolute;
 }
 
+#theme {
+    margin-top: 7%;
+    text-align: center;
+}
+
+#question{
+    text-shadow: 10;
+    text-align: center;
+}
+
+#reponse[type=radio]{
+    margin-left : 12%;
+    margin-top : 10%;
+   	font-size: 23px;
+    float: left;
+}
+
+#validerReponse{
+    margin-top : 10%;
+    margin-left : 25%;
+    width: 50%;
+    height: 10%;
+    text-align: center;
+}
+
 #Ecuyer{
-    background-image:url(/Source/boss01.png);
+    background-image:url(/Source/ecuyer.png);
     width : 20%;
     height: 20%;
     background-size:cover;
@@ -125,7 +154,7 @@ button.b2:active {
     right:0;
 }
 
-#dialogue{
+#dialogueEcuyerBox{
     background-image:url(/Source/bulle.png);
     background-size:contain;
     background-repeat:no-repeat;
@@ -136,91 +165,39 @@ button.b2:active {
     bottom: 18%;
 }
 
-
-#window{
-    background-image:url(/Source/cadre1.png);
-    background-repeat:no-repeat;
-    background-size: contain;
-    margin-top : 20px;
-    margin-right: 2.5%;
-    width:50%;
-    height: 600px;
-    float:right;
-}
-
-#Mob{
-    background-image:url(/Source/sorciere.jpg);
-    background-repeat:no-repeat;
-    background-size: contain;
-    margin-right: 7%;
-    width: 38%;
-    height: 70%;
-    position :relative;
-    float:right;
-    bottom : 8%;
-}
-
-#dialogueSorciere{
-    background-image:url( /Source/bulle.png);
-    background-size:contain;
-    background-repeat:no-repeat;
-    width : 20%;
-    height :20%;
-    position : absolute;
-    right : 10%;
-    top : 20%;
-}
-
-
-
-
-
-h1{
-    font:Jack in the box;
-}
-
-p.dialogue{
+#dialogueEcuyerText{
     margin-top: 25%;
     margin-left: 15%;
     margin-right: 15%;
     text-align: center;
 }
 
-p.dialogueS{
-    margin-top: 18%;
-    margin-right: 40%;
-    text-align: center;
+/* right div */
+
+#rightDiv{
+    background-image:url(/Source/cadre1.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    margin-top : 20px;
+    margin-right: 2.5%;
+    width:50%;
+    height: 70%;
+    float:right;
 }
 
-p.question{
-    text-shadow: 10;
-    text-align: center;
-}
-
-
-p.NomMob{
+#ennemy{
     color: white;
+    font-size:2em;
     margin-left: 20%;
     margin-top: 10%;
 }
 
-
-
-.theme {
-    margin-top: 7%;
-    text-align: center;
+#ennemy img{
+    margin-right: 15%;
+    width: 38%;
+    height: 70%;
+    position :relative;
+    display: "inline-block";
+    bottom : 8%;
 }
 
-.toto[type=radio]{
-    margin-left : 12%;
-    margin-top : 10%;
-    font-size: 23px;
-}
-
-.validation{
-    margin-top : 10%;
-    margin-left : 25%;
-    width: 50%;
-    height: 10%;
-    text-align: center;
-}
