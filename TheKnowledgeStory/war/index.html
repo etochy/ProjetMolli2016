@@ -27,16 +27,6 @@
 };
 </script>
 <script>
- 	var init = function(){
- 		var rootApi = 'https://1-dot-theknowledgeknight.appspot.com/_ah/api';
- 		gapi.client.load('scoreentityendpoint','v1', function(){
- 			gapi.client.scoreentityendpoint.insertScoreEntity({id:profile.getId(),score:100,name:profile.getName()}).execute (function(resp){
- 				console.log(resp);
- 			});
- 		), rootApi);	
- 	}
-</script>
-<script>
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {

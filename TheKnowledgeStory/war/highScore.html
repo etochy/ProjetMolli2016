@@ -1,10 +1,10 @@
 <html ng-app="highscore">
 <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href=""/>
     <meta charset="UTF-8">
 </head>
-<body>
+<body ng-controller="ScoreController as score">
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="hsapp.js"></script>
 	
@@ -17,20 +17,27 @@
 
 
 
-<script>
- 	var init = function(){
- 		var rootApi = 'https://1-dot-theknowledgeknight.appspot.com/_ah/api';
- 		gapi.client.load('scoreentityendpoint','v1', function(){
- 			gapi.client.scoreentityendpoint.insertScoreEntity({id:01, score:100, name:"toto"}).execute (function(resp){
- 				console.log(resp);
- 			});
- 		gapi.client.scoreentity.listScoreEntity().execute(function(resp){
- 			console.log(resp);
- 		});
- 		), rootApi);	
- 	};
-</script>
 
+<div ng-repeat="x in scores">
+	<p>{{x.name}}and : {{x.score}} </p> <br />
+</div>
+
+
+<script>
+	var init = function() {
+		var rootApi = 'https://1-dot-theknowledgeknight.appspot.com/_ah/api/';
+		gapi.client.load('scoreendpointentity', 'v1', function() {
+			console.log("todos api loaded");
+
+			
+			gapi.client.scoreendpointentity.listScoreEntity().execute(
+					function(resp) {
+						console.log(resp);
+					});	
+		}, rootApi);
+	}
+</script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script> 
  
  
 </body>
