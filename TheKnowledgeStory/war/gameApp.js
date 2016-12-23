@@ -2,38 +2,19 @@
 	
 	var app = angular.module('game', []);
 	
-	var step = 0;
-	var correctAnswers = 0;
-	var askedAnswer = 0;
-	var monsters = [{
-	        			name : "La sorciere (Ze Wissch)",
-	        			id : 0,
-	        			hp : 5,
-	        			image : "Source/sorciere.jpg"
-	        		},
-	        		{
-	        			name :"Le nain (Ze Douarfe)",
-	        			id : 1,
-	        			hp : 6,
-	        			image : "Source/nain.jpg"
-	        		},
-	        		{
-	        			name :"Le paysan (Ze Farmeur)",
-	        			id : 2,
-	        			hp : 3,
-	        			image : "Source/paysan.jpg"
-	        		},
-	        		{
-	        			name :"The Big boss (Ze grosse bosse)",
-	        			id : 3,
-	        			hp : 10,
-	        			image : "Source/bigboss.jpg"
-	        		}];
-	
 	app.controller('QuestionController', ['$scope','$window', function($scope,$window) {
 		$scope.question = [];
 		$scope.choices = [];
-		$scope.answer = "";
+		$scope.answer = null;
+		
+		$scope.askedAnswer = 0;
+		$scope.step = 0;
+	    $scope.correctAnswers = 0;
+		
+	    $scope.monsters = [{name : "La sorciere (Ze Wissch)", id : 0, hp : 5, image : "Source/sorciere.jpg"},
+							{name :"Le nain (Ze Douarfe)", id : 1, hp : 6, image : "Source/nain.jpg"},
+							{name :"Le paysan (Ze Farmeur)", id : 2, hp : 3, image : "Source/paysan.jpg"},
+							{name :"The Big boss (Ze grosse bosse)", id : 3, hp : 10, image : "Source/bigboss.jpg"}];
 		
 		$window.init = function(){
 			var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';  
@@ -55,31 +36,40 @@
 						
 						$scope.$apply();
 						console.log(resp);
-					}	
+					}
 				);
 			}, rootApi);
 		}
 		
 		// Call when the user validate an answer.
 		$scope.validateAnswer = function(userAnswer) {
-			if(userAnswer == $scope.answer){
-				correctAnswers++;
-			}
-			correctAnswers++;
-			console.log(correctAnswers);
-			askedAnswer++;
-			if(askedAnswer == 10){
-				if(correctAnswers >= monsters[step].hp){
-					step++;
+			
+			if(userAnswer != null){
+	
+				if(userAnswer == $scope.answer){
+					$scope.correctAnswers++;
 				}
-				else{
-					alert('Game over, vous devez réaffronter ce boss !');
+				
+				$scope.askedAnswer++;
+				
+				if($scope.askedAnswer == 10){
+					if($scope.correctAnswers >= $scope.monsters[$scope.step].hp){
+						$scope.step++;
+					}
+					else{
+						alert('Game over, vous devez réaffronter ce boss !');
+					}
+					$scope.askedAnswer = 0;
+					$scope.correctAnswers = 0;
 				}
-				askedAnswer = 0;
-				correctAnswers = 0;
+				
+				$window.init();
 			}
-			$window.init();
+			else{
+				alert('Veuillez sélectionner une réponse.');
+			}
 		}
+		
 	}]);
 	
 	
@@ -91,12 +81,6 @@
             $scope.parlote = $scope.parlotes[rang];
         }
     }]);
-    
-	app.controller('MonsterController', function() {
-		this.monsters = monsters;
-		this.step = step;
-		this.correctAnswers = correctAnswers;
-	});
 	
 	// Randomize an array
 	function shuffle(array) {
