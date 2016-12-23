@@ -1,7 +1,7 @@
 (function(){
 	var app = angular.module('highscore',[]);
 	  app.controller('ScoreController', ['$scope','$window', function($scope,$window){
-		  		$scope.scores =[];
+		  		$scope.scores = [];
 		  	
 	$window.init = function(){
 		  var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
