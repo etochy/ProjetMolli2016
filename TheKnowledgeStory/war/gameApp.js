@@ -31,18 +31,21 @@
 	        		}];
 	
 	app.controller('QuestionController', ['$scope','$window', function($scope,$window) {
-		var rand = Math.floor(Math.random() * 130); // TODO récupérer le nombre total de question
 		$scope.question = [];
 		$scope.choices = [];
+		$scope.answer = "";
 		
 		$window.init = function(){
 			var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';  
 			  
 			gapi.client.load('questionentityendpoint', 'v1', function() {
+				var rand = Math.floor(Math.random() * 130); // TODO récupérer le nombre total de question
+				
 				gapi.client.questionentityendpoint.getQuestionEntity({id:rand}).execute(
 					function(resp) {
 						$scope.question = resp;
 
+						$scope.answer = $scope.question.answer;
 						$scope.choices[0] = $scope.question.answer;
 						$scope.choices[1] = $scope.question.wrongAnswer1;
 						$scope.choices[2] = $scope.question.wrongAnswer2;
@@ -56,6 +59,27 @@
 				);
 			}, rootApi);
 		}
+		
+		// Call when the user validate an answer.
+		$scope.validateAnswer = function(userAnswer) {
+			if(userAnswer == $scope.answer){
+				correctAnswers++;
+			}
+			correctAnswers++;
+			console.log(correctAnswers);
+			askedAnswer++;
+			if(askedAnswer == 10){
+				if(correctAnswers >= monsters[step].hp){
+					step++;
+				}
+				else{
+					alert('Game over, vous devez réaffronter ce boss !');
+				}
+				askedAnswer = 0;
+				correctAnswers = 0;
+			}
+			$window.init();
+		}
 	}]);
 	
 	
@@ -68,32 +92,11 @@
         }
     }]);
     
-	
-	
 	app.controller('MonsterController', function() {
 		this.monsters = monsters;
 		this.step = step;
 		this.correctAnswers = correctAnswers;
 	});
-	
-	// Call when the user validate an answer.
-	function validateAnswer(correct) {
-		if(correct){
-			correctAnswers++;
-		}
-		askedAnswer++;
-		if(askedAnswer == 10){
-			if(correctAnswers >= monsters[step].hp){
-				step++;
-			}
-			else{
-				alert('Game over, vous devez réaffronter ce boss !');
-			}
-			askedAnswer = 0;
-			correctAnswers = 0;
-		}
-	}
-
 	
 	// Randomize an array
 	function shuffle(array) {
