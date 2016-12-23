@@ -10,6 +10,7 @@
 		$scope.askedAnswer = 0;
 		$scope.step = 0;
 	    $scope.correctAnswers = 0;
+	    $scope.gameOver = false;
 		
 	    $scope.monsters = [{name : "La sorciere (Ze Wissch)", id : 0, hp : 3, image : "Source/sorciere.jpg"},
 							{name :"Le nain (Ze Douarfe)", id : 1, hp : 4, image : "Source/nain.jpg"},
@@ -68,7 +69,7 @@
 						$scope.step++;
 					}
 					else{
-						alert('Game over, vous devez réaffronter ce boss !');
+						$scope.gameOver = true;
 					}
 					$scope.askedAnswer = 0;
 					$scope.correctAnswers = 0;
