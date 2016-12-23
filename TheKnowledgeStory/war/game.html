@@ -17,9 +17,9 @@
 	
 	<div id="leftDiv" ng-controller="QuestionController as question"> 
 	
-	    <h1 id="theme">Theme : {{question.theme}}</h1>
+	    <h1 id="theme">Theme : {{question.theme}} </h1>
 	    
-	    <p id="question">{{question.question}}</p>
+	    <p id="question">{{question.question}} ? </p>
 		
 		<div ng-repeat="choice in choices">
 		    <input id="reponse" type="radio" name="reponse"> {{ choice }}</input>
@@ -27,8 +27,8 @@
 	
 	    <button id="validerReponse">Validez votre réponse</button>
 	
-	    <div id="dialogueEcuyerBox" ng-controller="EcuyerController" ng-show="clicked">
-	        <p id="dialogueEcuyerText">{{ }}</p>
+	    <div id="dialogueEcuyerBox" ng-controller="EcuyerController as parlote" ng-show="clicked" ng-click="i = getRand()">
+	        <p id="dialogueEcuyerText">{{ parlote.parlote[i] }}</p>
 	    </div>
 	    
 	    <a href ng-click="clicked = !clicked" ng-click="GenRand()"><div id="Ecuyer"></div></a> 

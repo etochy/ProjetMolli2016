@@ -29,6 +29,7 @@
 	        			hp : 10,
 	        			image : "Source/bigboss.jpg"
 	        		}];
+	
 	var parlotes = [{
 	        			parlote : "Tu aimes les sushis ? "
 	        		},
@@ -48,8 +49,18 @@
 	        			parlote : "Test 1 2    1 2"
 	        		},
 	        		{
+	        			parlote : "Il est moche !"
+	        		},
+	        		{
+	        			parlote : "Mais alo quoi ?"
+	        		},
+	        		{
+	        			parlote : "Joyeux Noel !"
+	        		},
+	        		{
 	        			parlote : "Pourrr le roi !"
 	        		}];
+	
 	
 	app.controller('QuestionController', ['$scope','$window', function($scope,$window) {
 		var rand = Math.floor(Math.random() * 130); // TODO récupérer le nombre total de question
