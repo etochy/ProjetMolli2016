@@ -51,24 +51,24 @@
 	        			parlote : "Pourrr le roi !"
 	        		}];
 	
-	app.controller('QuestionController', function() {
-		var ROOT_API = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';
-		this.theme = "test";
-		this.title = "test";
-		this.choices = [	{answer:null, correct:null},
-							{answer:null, correct:null},
-							{answer:null, correct:null},
-							{answer:null, correct:null}
-		                  ];
+	app.controller('QuestionController', ['$scope','$window', function($scope,$window) {
+		$scope.question = [];
 		
-		gapi.client.load('questionentityendpoint', 'v1', function() {
-			gapi.client.questionentityendpoint.getQuestionEntity({id:'108'}).execute(
-				function(resp) {
-					console.log(resp);
-				}
-			);
-		}, ROOT_API);
-	});
+		$window.init = function(){
+			var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';  
+			  
+			gapi.client.load('questionentityendpoint', 'v1', function() {
+				gapi.client.questionentityendpoint.getQuestionEntity({id:'108'}).execute(
+					function(resp) {
+						$scope.question = resp.items;
+						$scope.$apply();
+					}
+				);
+			}, rootApi);
+		}
+		
+		console.log($scope.question['theme']);
+	}]);
 	
 	app.controller('EcuyerController', function() {
 		this.talks = parlotes;
