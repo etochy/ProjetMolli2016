@@ -52,15 +52,25 @@
 	        		}];
 	
 	app.controller('QuestionController', ['$scope','$window', function($scope,$window) {
+		var rand = Math.floor(Math.random() * 130); // TODO récupérer le nombre total de question
 		$scope.question = [];
+		$scope.choices = [];
 		
 		$window.init = function(){
 			var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';  
 			  
 			gapi.client.load('questionentityendpoint', 'v1', function() {
-				gapi.client.questionentityendpoint.getQuestionEntity({id:'108'}).execute(
+				gapi.client.questionentityendpoint.getQuestionEntity({id:rand}).execute(
 					function(resp) {
 						$scope.question = resp;
+
+						$scope.choices[0] = $scope.question.answer;
+						$scope.choices[1] = $scope.question.wrongAnswer1;
+						$scope.choices[2] = $scope.question.wrongAnswer2;
+						$scope.choices[3] = $scope.question.wrongAnswer3;
+						
+						//$scope.choices = shuffle(choices);
+						
 						$scope.$apply();
 						console.log(resp);
 					}	

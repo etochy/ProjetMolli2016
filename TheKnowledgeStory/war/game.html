@@ -19,10 +19,10 @@
 	
 	    <h1 id="theme">Theme : {{question.theme}}</h1>
 	    
-	    <p id="question">{{question.title}}</p>
+	    <p id="question">{{question.question}}</p>
 		
-		<div ng-repeat="choice in question.choices">
-		    <input id="reponse" type="radio" name="reponse"> {{ choice.answer }}</input>
+		<div ng-repeat="choice in choices">
+		    <input id="reponse" type="radio" name="reponse"> {{ choice }}</input>
 		</div>
 	
 	    <button id="validerReponse">Validez votre réponse</button>
