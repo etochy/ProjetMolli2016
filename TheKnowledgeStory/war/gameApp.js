@@ -30,38 +30,6 @@
 	        			image : "Source/bigboss.jpg"
 	        		}];
 	
-	var parlotes = [{
-	        			parlote : "Tu aimes les sushis ? "
-	        		},
-	        		{
-	        			parlote : "La réponse D"
-	        		},
-	        		{
-	        			parlote : "Stéphanie de Monaco !"
-	        		},
-	        		{
-	        			parlote : "Jeanne !"
-	        		},
-	        		{
-	        			parlote : "Comment est ce que ... "
-	        		},
-	        		{
-	        			parlote : "Test 1 2    1 2"
-	        		},
-	        		{
-	        			parlote : "Il est moche !"
-	        		},
-	        		{
-	        			parlote : "Mais alo quoi ?"
-	        		},
-	        		{
-	        			parlote : "Joyeux Noel !"
-	        		},
-	        		{
-	        			parlote : "Pourrr le roi !"
-	        		}];
-	
-	
 	app.controller('QuestionController', ['$scope','$window', function($scope,$window) {
 		var rand = Math.floor(Math.random() * 130); // TODO récupérer le nombre total de question
 		$scope.question = [];
@@ -90,10 +58,18 @@
 		}
 	}]);
 	
-	app.controller('EcuyerController', function() {
-		this.talks = parlotes;
-	});
-
+	
+    app.controller('EcuyerController', ['$scope', function ($scope) {
+    	$scope.parlote = "De Nantess à Mont...";
+        $scope.parlotes = ["Tu aimes les sushis ? ", "La réponse D", "Stéphanie de Monaco !", "Jeanne !", "Comment est ce que ... ", "Test 1 2    1 2", "Il est moche !", "Mais alo quoi ?", "Joyeux Noel !", "Pourrr le roi !"];
+        $scope.change = function () {
+            var rang = Math.floor(Math.random() * 10);
+            $scope.parlote = $scope.parlotes[rang];
+        }
+    }]);
+    
+	
+	
 	app.controller('MonsterController', function() {
 		this.monsters = monsters;
 		this.step = step;
@@ -117,11 +93,7 @@
 			correctAnswers = 0;
 		}
 	}
-	
-	// Return a random number
-	function genRand() {
-		return Math.floor(Math.random() * parlotes.length);
-	}
+
 	
 	// Randomize an array
 	function shuffle(array) {

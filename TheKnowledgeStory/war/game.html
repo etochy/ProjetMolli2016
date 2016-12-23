@@ -26,13 +26,17 @@
 		</div>
 	
 	    <button id="validerReponse">Validez votre réponse</button>
-	
-	    <div id="dialogueEcuyerBox" ng-controller="EcuyerController as parlote" ng-show="clicked" ng-click="i = getRand()">
-	        <p id="dialogueEcuyerText">{{ parlote.parlote[i] }}</p>
-	    </div>
 	    
-	    <a href ng-click="clicked = !clicked" ng-click="GenRand()"><div id="Ecuyer"></div></a> 
-	
+	    
+		<div ng-controller="EcuyerController">
+	    	<div id="dialogueEcuyerBox" ng-show="clicked" >
+	        	<p id="dialogueEcuyerText">{{parlote}}</p>
+	    	</div>
+	    
+	    	<a href ng-click="clicked = !clicked" >
+	    		<div id="Ecuyer" ng-click="change()"></div>
+	    	</a> 
+		</div>
 	</div>
 	
 	<div id="rightDiv" ng-controller="MonsterController as monster">
