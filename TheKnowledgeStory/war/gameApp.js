@@ -60,14 +60,13 @@
 			gapi.client.load('questionentityendpoint', 'v1', function() {
 				gapi.client.questionentityendpoint.getQuestionEntity({id:'108'}).execute(
 					function(resp) {
-						$scope.question = resp.items;
+						$scope.question = resp;
 						$scope.$apply();
-					}
+						console.log(resp);
+					}	
 				);
 			}, rootApi);
 		}
-		
-		console.log($scope.question['theme']);
 	}]);
 	
 	app.controller('EcuyerController', function() {
