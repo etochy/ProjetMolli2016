@@ -3,36 +3,47 @@
 	var app = angular.module('game', []);
 
 	app.controller('QuestionController', ['$scope','$window', function($scope,$window) {
-		$scope.question = [];
-		$scope.choices = [];
+		$scope.question = null;
 		$scope.answer = null;
+		$scope.choices = [];
 
 		$scope.askedAnswer = 0;
 		$scope.step = 0;
 		$scope.correctAnswers = 0;
 
-		$scope.monsters = [{name : "La sorciere (Ze Wissch)", id : 0, hp : 5, image : "Source/sorciere.jpg"},
-		                   {name :"Le nain (Ze Douarfe)", id : 1, hp : 6, image : "Source/nain.jpg"},
-		                   {name :"Le paysan (Ze Farmeur)", id : 2, hp : 3, image : "Source/paysan.jpg"},
-		                   {name :"The Big boss (Ze grosse bosse)", id : 3, hp : 10, image : "Source/bigboss.jpg"}];
+		$scope.monsters = [{name : "La sorciere", id : 0, hp : 3, image : "Source/sorciere.jpg"},
+		                   {name :"Le nain", id : 1, hp : 4, image : "Source/nain.jpg"},
+		                   {name :"Le paysan", id : 2, hp : 5, image : "Source/paysan.jpg"},
+		                   {name :"The Big boss", id : 3, hp : 6, image : "Source/bigboss.jpg"}];
+		
+		$scope.shuffle = function() {
+		      var a = $scope.choices;
+		      var j, x, i;
+		      for (let i = a.length; i; i--) {
+		        let j = Math.floor(Math.random() * i);
+		        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+		      }
+
+		      $scope.choices = a;
+		}
 
 		$window.init = function(){
 			var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';  
 
 			gapi.client.load('questionentityendpoint', 'v1', function() {
 				var rand = Math.floor(Math.random() * 130); // TODO récupérer le nombre total de question
-
+				
 				gapi.client.questionentityendpoint.getQuestionEntity({id:rand}).execute(
 						function(resp) {
 							$scope.question = resp;
-
+							
 							$scope.answer = $scope.question.answer;
 							$scope.choices[0] = $scope.question.answer;
 							$scope.choices[1] = $scope.question.wrongAnswer1;
 							$scope.choices[2] = $scope.question.wrongAnswer2;
 							$scope.choices[3] = $scope.question.wrongAnswer3;
 
-							//$scope.choices = shuffle(choices);
+							$scope.shuffle();
 
 							$scope.$apply();
 							console.log(resp);
@@ -76,7 +87,6 @@
 		}
 
 	}]);
-
 
 	app.controller('EcuyerController', ['$scope', function ($scope) {
 		$scope.parlote = "De Nantess à Mont...";

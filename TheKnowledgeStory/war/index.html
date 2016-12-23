@@ -9,56 +9,51 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
-<script type="text/javascript" src="angular.min.js"></script>
-<script type="text/javascript" src="gameApp.js"></script>
-<script> function onSignIn(googleUser) {
-    /* Useful data for your client-side scripts:*/
-    var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId());
-    /* Don't send this directly to your server!*/
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
-    /* The ID token you need to pass to your backend:*/
-    var id_token = googleUser.getAuthResponse().id_token;
-    console.log("ID Token: " + id_token);
-};
-</script>
-<script>
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-        });
-    }
-</script>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="gameApp.js"></script>
+	<script> function onSignIn(googleUser) {
+	    /* Useful data for your client-side scripts:*/
+	    var profile = googleUser.getBasicProfile();
+	    console.log("ID: " + profile.getId());
+	    /* Don't send this directly to your server!*/
+	    console.log('Full Name: ' + profile.getName());
+	    console.log('Given Name: ' + profile.getGivenName());
+	    console.log('Family Name: ' + profile.getFamilyName());
+	    console.log("Image URL: " + profile.getImageUrl());
+	    console.log("Email: " + profile.getEmail());
+	    /* The ID token you need to pass to your backend:*/
+	    var id_token = googleUser.getAuthResponse().id_token;
+	    console.log("ID Token: " + id_token);
+	};
+	</script>
+	<script>
+	    function signOut() {
+	        var auth2 = gapi.auth2.getAuthInstance();
+	        auth2.signOut().then(function () {
+	            console.log('User signed out.');
+	        });
+	    }
+	</script>
+	
+	<a href="#" onclick="signOut();"  ng-click="show = !show">Se deconnecter</a>
 
-<a href="#" onclick="signOut();"  ng-click="show = !show">Se deconnecter</a>
-
-
-
-
-<div class="g-signin2" data-onsuccess="onSignIn" ng-click="show = !show" ng-show="show">Se connecter
-</div>
-
-
-<div id="ban">
-</div>
-<a href="https://github.com/etochy/ProjetMolli2016">
-    <div id="github"></div>
-</a>
-
-
-<a href="http://1-dot-theknowledgestory.appspot.com/game.html">
-<button class="b1" ng-show="!show">Nouvelle Partie</button>
-<!-- <button class="b2" ng-show="!show">Continuer</button> -->
-</a>
-
-<a href="http://1-dot-theknowledgestory.appspot.com/highScore.html">
-<button class="b2" ng-show="!show">High Score</button>
-</a>
-<button class="b2">Générer des questions</button>
+	<div class="g-signin2" data-onsuccess="onSignIn" ng-click="show = !show" ng-show="show">Se connecter
+	</div>
+	
+	
+	<div id="ban">
+	</div>
+	<a href="https://github.com/etochy/ProjetMolli2016">
+	    <div id="github"></div>
+	</a>
+	
+	<a href="http://1-dot-theknowledgestory.appspot.com/game.html">
+		<button class="b1" ng-show="!show">Nouvelle Partie</button>
+	</a>
+	
+	<a href="http://1-dot-theknowledgestory.appspot.com/highScore.html">
+		<button class="b2" ng-show="!show">High Score</button>
+	</a>
+	
 </body>
 </html>
