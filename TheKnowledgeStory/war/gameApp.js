@@ -31,7 +31,7 @@
 			var rootApi = 'https://1-dot-theknowledgestory.appspot.com/_ah/api/';  
 
 			gapi.client.load('questionentityendpoint', 'v1', function() {
-				var rand = Math.floor(Math.random() * 130); // TODO récupérer le nombre total de question
+				var rand = Math.floor(Math.random() * 130);
 				
 				gapi.client.questionentityendpoint.getQuestionEntity({id:rand}).execute(
 						function(resp) {
@@ -46,7 +46,6 @@
 							$scope.shuffle();
 
 							$scope.$apply();
-							console.log(resp);
 						}
 				);
 			}, rootApi);
@@ -64,15 +63,17 @@
 				$scope.askedAnswer++;
 
 				if($scope.askedAnswer == 10 && $scope.monsters[$scope.step].hp > 0){
-					alert('Game over, vous devez réaffronter ce boss !');
+					alert('Game over');
 					$scope.askedAnswer = 0;
 					$scope.correctAnswers = 0;
+					$window.location.href = '/index.html';
 				}
 				else{
 					if($scope.correctAnswers >= $scope.monsters[$scope.step].hp){
 						$scope.step++;
 						if($scope.step == 4){
 							alert('Bravo, vous avez tuer tous les monstres !');
+							$$window.location.href = '/index.html';
 						}
 						$scope.askedAnswer = 0;
 						$scope.correctAnswers = 0;
